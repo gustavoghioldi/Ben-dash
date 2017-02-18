@@ -1,0 +1,17 @@
+<form>
+    <div class="form-group">
+        <label for="name">Nombre de la Comunidad</label>
+        <input type="text" class="form-control" ng-model="conf.name" placeholder="Nombre">
+        <label for="name">Imagen</label>
+        <input type="file" id="file">
+
+        <label for="name">Descripción</label>
+        <textarea class="form-control" ng-model="conf.description" placeholder="Breve Descripcion"></textarea>
+        <label for="name">Precio de suscripción</label>
+        <input type="number" class="form-control" ng-model="conf.price" placeholder="Precio">
+        <label for="name">email de contacto</label>
+        <input type="email" class="form-control" ng-model="conf.email" placeholder="email">
+    </div>
+    {{name}}
+    <button type="button" class="btn btn-danger" ng-click="onClickEdit()">Add</button>
+</form>
