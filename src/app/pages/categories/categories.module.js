@@ -6,7 +6,8 @@
     'use strict';
 
     angular.module('BlurAdmin.pages.categories', [
-            'BlurAdmin.pages.categories.list'
+            'BlurAdmin.pages.categories.list',
+            'BlurAdmin.pages.categories.add'
         ])
         .config(routeConfig);
 
@@ -23,6 +24,8 @@
                     order: 150,
                 },
             });
+
+
     }
 
 })();

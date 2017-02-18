@@ -9,23 +9,17 @@
         .controller('ListCtrl', ListCtrl);
 
     /** @ngInject */
-    function ListCtrl($scope, $uibModal) {
-        $scope.data = "ListCtrl...";
-        var dataRef = firebase.database().ref('/communities/la_caja/categories');
+    function ListCtrl($scope, $state) {
 
-        dataRef.on('value', function(ss) {
+        categoriesRef.on('value', function(ss) {
             $scope.categories = ss.val();
             console.log($scope.categories);
         });
 
-        $scope.modalAddCategory = function() {
-            $uibModal.open({
-                animation: true,
-                templateUrl: "app/pages/categories/modals/create.html",
-                size: 'lg'
-
-            });
+        $scope.addCategory = function() {
+            $state.go("categories.add");
         };
+
     }
 
 

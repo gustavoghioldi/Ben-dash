@@ -1,0 +1,12 @@
+<form ng-controller="AddCtrl">
+    <div class="form-group">
+        <label for="name">Nombre de la categoría</label>
+        <input type="text" class="form-control" id="name" ng-model="name" placeholder="name">
+        <label for="name">Codigo</label>
+        <input type="text" class="form-control" id="name" ng-model="codigo" placeholder="name">
+    </div>
+    <div class="form-group">
+        <input ng-model="tags" type="text" tag-input="primary" data-role="tagsinput" placeholder="Add Tag">
+    </div>
+    <button type="button" class="btn btn-danger" ng-click="onClickAdd()">Add</button>
+</form>

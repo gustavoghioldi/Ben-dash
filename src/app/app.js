@@ -25,3 +25,5 @@ var config = {
     messagingSenderId: "101979769721"
 };
 firebase.initializeApp(config);
+
+var categoriesRef = firebase.database().ref('/communities/la_caja/categories');

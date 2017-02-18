@@ -14,7 +14,7 @@
             .state('categories.list', {
                 url: '/list',
                 templateUrl: 'app/pages/categories/list/list.html',
-                title: 'Ver Todas',
+                title: 'Gestionar',
                 controller: 'ListCtrl',
                 sidebarMeta: {
                     order: 100,
