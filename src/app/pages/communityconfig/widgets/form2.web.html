@@ -1,0 +1,32 @@
+<uib-accordion>
+    <uib-accordion-group heading="PRINCIPALES" panel-class="bootstrap-panel accordion-panel panel-default">
+        Hello
+    </uib-accordion-group>
+    <uib-accordion-group heading="CATEGORIAS" panel-class="bootstrap-panel accordion-panel panel-default">
+
+        <form class="row">
+            <div class="form-group">
+                <div ng-repeat="c in categories">
+                    <div class="col-xs-6 col-md-4">
+                        <label for="name">{{c.name}}</label>
+                        <input type="number" class="form-control" ng-model="c.order" placeholder="orden">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-danger" ng-click="onClickEdit()">Add</button>
+            </div>
+        </div>
+    </uib-accordion-group>
+    <uib-accordion-group heading="PARTNERS" panel-class="bootstrap-panel accordion-panel panel-default">
+        <p>The body of the uib-accordion group grows to fit the contents</p>
+        <button type="button" class="btn btn-primary btn-sm">Add Item</button>
+    </uib-accordion-group>
+    <uib-accordion-group heading="BENEFICIOS" panel-class="bootstrap-panel accordion-panel panel-default">
+        Hello
+    </uib-accordion-group>
+
+
+</uib-accordion>
