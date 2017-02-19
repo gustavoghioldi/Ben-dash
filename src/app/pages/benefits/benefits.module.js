@@ -5,22 +5,24 @@
 (function() {
     'use strict';
 
-    angular.module('BlurAdmin.pages.communityconfig', [
-            'BlurAdmin.pages.communityconfig.config'
+    angular.module('BlurAdmin.pages.benefits', [
+            'BlurAdmin.pages.benefits.list',
+            'BlurAdmin.pages.benefits.edit',
+            'BlurAdmin.pages.benefits.add'
         ])
         .config(routeConfig);
 
     /** @ngInject */
     function routeConfig($stateProvider) {
         $stateProvider
-            .state('communityconfig', {
+            .state('benefits', {
                 abstract: true,
-                url: '/communityconfig',
-                title: 'Configuración',
+                url: '/benefits',
+                title: 'Beneficios',
                 template: '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
                 sidebarMeta: {
                     icon: 'ion-stats-bars',
-                    order: 150,
+                    order: 50,
                 },
             });
 

@@ -28,3 +28,4 @@ firebase.initializeApp(config);
 
 var categoriesRef = firebase.database().ref('/communities/la_caja/categories');
 var configRef = firebase.database().ref('/communities/la_caja/config');
+var partnersRef = firebase.database().ref('/communities/la_caja/partners');

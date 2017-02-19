@@ -5,17 +5,17 @@
 (function() {
     'use strict';
 
-    angular.module('BlurAdmin.pages.communityconfig.config', [])
+    angular.module('BlurAdmin.pages.partners.add', [])
         .config(routeConfig);
 
     /** @ngInject */
     function routeConfig($stateProvider) {
         $stateProvider
 
-            .state('communityconfig.config', {
-            url: '/config',
-            templateUrl: 'app/pages/communityconfig/config/config.html',
-            title: 'Editar',
+            .state('partners.add', {
+            url: '/add',
+            templateUrl: 'app/pages/partners/add/add.html',
+            title: 'Agregar',
             sidebarMeta: {
                 order: 0,
             },
