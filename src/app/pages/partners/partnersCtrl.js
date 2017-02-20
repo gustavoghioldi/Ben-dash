@@ -1,31 +1,31 @@
 (function() {
     'use strict';
 
-    angular.module('BlurAdmin.pages.partners.list')
+    angular.module('BlurAdmin.pages.partners')
         .controller('PartnersCtrl', PartnersCtrl);
 
     /** @ngInject */
     function PartnersCtrl($scope, $state) {
         console.log("PartnersCtrl...");
 
-         partnersRef.on('value', function(ss) {
+        partnersRef.on('value', function(ss) {
             $scope.partners = ss.val();
             console.log($scope.partners);
         });
 
-         $scope.addPartner = function(){
+        $scope.addPartner = function() {
             $state.go("partners.add");
-         }
+        }
 
         $scope.onClickAdd = function() {
             partnersRef.push({
-                        name: $scope.name,
-                        codigo: $scope.codigo
-                    });
+                name: $scope.name,
+                codigo: $scope.codigo
+            });
             $state.go("partners.edit");
 
-            }
         }
-    
+    }
+
 
 })();
