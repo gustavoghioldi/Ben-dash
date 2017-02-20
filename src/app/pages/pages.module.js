@@ -20,6 +20,8 @@
             'BlurAdmin.pages.partners',
             'BlurAdmin.pages.benefits',
             'BlurAdmin.pages.suport',
+            'BlurAdmin.pages.admin',
+
         ])
         .config(routeConfig);
 
