@@ -1,12 +1,36 @@
-<form>
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Recipients">
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Subject">
-    </div>
-    <div class="form-group">
-        <textarea class="form-control" placeholder="Message"></textarea>
-    </div>
-    <button type="submit" class="btn btn-success" ng-click="editDetails()">Editar</button>
-</form>
+<uib-tabset active="$tabSetStatus.activeTab">
+    <uib-tab heading="DATOS BASICOS">
+        <form>
+            <div class="form-group">
+                <label for="code">Código</label>
+                <input type="text" class="form-control" id="code" ng-model="partner.code" placeholder="Código que identificará al Partner">
+                <label for="name">Nombre del Partner</label>
+                <input type="text" class="form-control" id="name" ng-model="partner.name" placeholder="Nombre del Partner">
+            </div>
+            <button type="button" class="btn btn-danger" ng-click="editInfo()">Add</button>
+        </form>
+    </uib-tab>
+    <uib-tab heading="SUCURSALES">
+
+    </uib-tab>
+    <uib-tab heading="BENEFCIOS">
+
+    </uib-tab>
+    <uib-tab heading="CONTACTOS">
+        <form>
+            <div class="form-group">
+                <label for="position">Código</label>
+                <input type="text" class="form-control" ng-model="partner.details.contacts.position" placeholder="Cargo en el partner">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" ng-model="partner.details.contacts.name" placeholder="Nombre del Contacto">
+                <input ng-model="partner.details.contacts.emails" type="text" tag-input="primary" data-role="tagsinput" placeholder="Agregar emails">
+                <input ng-model="partner.details.contacts.phones" type="text" tag-input="primary" data-role="tagsinput" placeholder="Agregar Telfonos">
+            </div>
+            <button type="button" class="btn btn-danger" ng-click="editInfo('contacts')">Add</button>
+        </form>
+    </uib-tab>
+    <uib-tab heading="OPERADORES">
+
+    </uib-tab>
+
+</uib-tabset>

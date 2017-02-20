@@ -13,6 +13,11 @@
             console.log($scope.partners);
         });
 
+        $scope.partnerSelected = function() {
+            console.log($scope.partners.selected);
+            console.log('partnerSelected');
+        }
+
         $scope.addPartner = function() {
             $state.go("partners.add");
         }

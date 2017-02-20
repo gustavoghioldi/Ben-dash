@@ -1,0 +1,25 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /home/ghi/.nvm/v7.2.0/bin/node /npm_dependencies/bin/firebase deploy
+[debug] CLI Version:  3.2.3
+[debug] Platform:     linux
+[debug] Node Version: v7.2.0
+[debug] Time:         Mon Feb 20 2017 17:54:16 GMT-0300 (ART)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/j_hAb7DAbLU-D8cQDeS4STM209G5V5jgYlIAaA0wEKh1x0ELf57y-ZDzUBi6NKGg',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Feb 20 2017 17:54:16 GMT-0300 (ART)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/benefit-cb2e2  
+ Mon Feb 20 2017 17:54:21 GMT-0300 (ART)
+[debug] Error: getaddrinfo EAI_AGAIN admin.firebase.com:443
+    at Object.exports._errnoException (util.js:1022:11)
+    at errnoException (dns.js:33:15)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+[error] 
+[error] Error: Server Error. getaddrinfo EAI_AGAIN admin.firebase.com:443
