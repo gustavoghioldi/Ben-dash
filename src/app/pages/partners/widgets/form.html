@@ -1,10 +1,11 @@
 <form ng-controller="PartnersCtrl">
+
     <div class="form-group">
-        <label for="name">Codigo</label>
-        <input type="text" class="form-control" id="name" ng-model="codigo" placeholder="name">    
+        <label for="code">Código</label>
+        <input type="text" class="form-control" id="code" ng-model="code" placeholder="Código que identificará al Partner">
         <label for="name">Nombre del Partner</label>
-        <input type="text" class="form-control" id="name" ng-model="name" placeholder="name">
+        <input type="text" class="form-control" id="name" ng-model="name" placeholder="Nombre del Partner">
     </div>
-  
+
     <button type="button" class="btn btn-danger" ng-click="onClickAdd()">Add</button>
 </form>

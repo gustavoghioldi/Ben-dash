@@ -15,7 +15,6 @@
                 url: '/list',
                 templateUrl: 'app/pages/categories/list/list.html',
                 title: 'Gestionar',
-                controller: 'ListCtrl',
                 sidebarMeta: {
                     order: 100,
                 },

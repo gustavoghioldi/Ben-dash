@@ -1,14 +1,24 @@
-<div class="widgets">
+<div class="widgets" ng-controller="PartnersEditCtrl">
 
     <div>
         <div class="col-md-4">
-            <div ba-panel ba-panel-title="Datos Generales" ba-panel-class="with-scroll">
-                <div include-with-scope="app/pages/communityconfig/widgets/edit.basic.html"></div>
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title="Imagen Institucional" ba-panel-class="with-scroll">
+                    <div include-with-scope="app/pages/partners/widgets/edit.image.html"></div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title="Info" ba-panel-class="with-scroll">
+                    <div include-with-scope="app/pages/partners/widgets/edit.info.html"></div>
+                </div>
             </div>
         </div>
-
-
-
+        <div class="col-md-8">
+            <div ba-panel ba-panel-title="Datos particulares del Partner" ba-panel-class="with-scroll">
+                <div include-with-scope="app/pages/partners/widgets/edit.details.html"></div>
+            </div>
+        </div>
     </div>
 
 </div>

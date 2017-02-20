@@ -14,8 +14,14 @@
 
             .state('partners.edit', {
             url: '/edit',
+            title: 'Editar',
             templateUrl: 'app/pages/partners/edit/edit.html',
-          
+            params: {
+                'key': false
+            },
+            sidebarMeta: {
+                order: 0,
+            },
         });
     }
 

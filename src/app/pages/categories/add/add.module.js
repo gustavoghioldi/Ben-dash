@@ -15,7 +15,6 @@
             .state('categories.add', {
             url: '/add',
             templateUrl: 'app/pages/categories/add/add.html',
-            controller: 'AddCtrl',
             title: 'Agregar',
             sidebarMeta: {
                 order: 0,

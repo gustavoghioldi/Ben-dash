@@ -20,6 +20,7 @@
                 url: '/partners',
                 title: 'Partners',
                 template: '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
+
                 sidebarMeta: {
                     icon: 'ion-stats-bars',
                     order: 150,
