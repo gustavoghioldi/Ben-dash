@@ -5,16 +5,16 @@
 (function() {
     'use strict';
 
-    angular.module('BlurAdmin.pages.benefits.edit', [])
+    angular.module('BlurAdmin.pages.products.add', [])
         .config(routeConfig);
 
     /** @ngInject */
     function routeConfig($stateProvider) {
         $stateProvider
-            .state('benefits.edit', {
-                url: '/edit',
-                templateUrl: 'app/pages/benefits/edit/edit.html',
-                title: 'Editar',
+            .state('products.add', {
+                url: '/add',
+                templateUrl: 'app/pages/products/add/add.html',
+                title: 'Agregar',
                 sidebarMeta: {
                     order: 100,
                 },

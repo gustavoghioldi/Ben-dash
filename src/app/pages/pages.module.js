@@ -18,7 +18,7 @@
             'BlurAdmin.pages.profile',
             'BlurAdmin.pages.communityconfig',
             'BlurAdmin.pages.partners',
-            'BlurAdmin.pages.benefits',
+            'BlurAdmin.pages.products',
             'BlurAdmin.pages.suport',
             'BlurAdmin.pages.admin',
 

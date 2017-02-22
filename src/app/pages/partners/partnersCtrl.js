@@ -11,11 +11,21 @@
         partnersRef.on('value', function(ss) {
             $scope.partners = ss.val();
             console.log($scope.partners);
+            $scope.partnersArray = [];
+
+            ss.forEach(function(ssChild) {
+                var key = ssChild.key;
+                var aux = { name: ssChild.val().name, key: key };
+                $scope.partnersArray.push(aux);
+                console.log($scope.partnersArray);
+            });
         });
 
         $scope.partnerSelected = function() {
             console.log($scope.partners.selected);
-            console.log('partnerSelected');
+            console.log($scope.partners.selected.key);
+
+            $scope.edit($scope.partners.selected.key);
         }
 
         $scope.addPartner = function() {
@@ -43,6 +53,7 @@
         }
 
         $scope.edit = function(key) {
+            console.log('PartnersCtrl.edit ...');
             console.log(key);
             $state.go('partners.edit', { key: key });
         }

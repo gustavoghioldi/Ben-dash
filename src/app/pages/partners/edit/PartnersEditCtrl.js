@@ -8,10 +8,10 @@
     function PartnersEditCtrl($scope, $state, toastr, $stateParams) {
 
         console.log("PartnersEditCtrl...");
+        console.log($stateParams);
         if ($stateParams.key) {
             partnersRef.child($stateParams.key).on('value', function(ss) {
                 console.log(ss.val());
-
                 $scope.partner = ss.val();
             });
         }
@@ -26,7 +26,7 @@
 
         $scope.editInfo = function(info) {
             console.log("editInfo");
-            console.log(info);
+            console.log($scope.partner);
             if (info == 'contacts') {
                 console.log($scope.partner.details.contacts);
                 partnersRef.child($stateParams.key + '/details/contacts').update($scope.partner.details.contacts);

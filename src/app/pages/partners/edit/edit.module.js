@@ -16,6 +16,7 @@
             url: '/edit',
             title: 'Editar',
             templateUrl: 'app/pages/partners/edit/edit.html',
+            controller: 'PartnersEditCtrl',
             params: {
                 'key': false
             },

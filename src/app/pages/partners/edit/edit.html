@@ -1,37 +1,44 @@
 <div class="widgets">
 
+    <div ng-controller="PartnersCtrl">
+        <div class="row ">
+            <div class="form-group ">
+                <ui-select ng-change="partnerSelected()" ng-model="partners.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true" search-enabled="true">
+                    <ui-select-match placeholder="Cambiar partner a Editar">
+                        <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="p in partnersArray | filter: $select.search">
+                        <span id="code">{{p.name}}</span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+    </div>
+
     <div ng-if="partner" ng-controller="PartnersEditCtrl">
-        <div class="col-md-4">
-            <div class="col-md-12">
-                <div ba-panel ba-panel-title="Imagen Institucional" ba-panel-class="with-scroll">
-                    <div include-with-scope="app/pages/partners/widgets/edit.image.html"></div>
-                </div>
-            </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <div ba-panel ba-panel-title="Imagen Institucional" ba-panel-class="with-scroll">
+                        <div include-with-scope="app/pages/partners/widgets/edit.info.html"></div>
 
-            <div class="col-md-12">
-                <div ba-panel ba-panel-title="Info" ba-panel-class="with-scroll">
-                    <div include-with-scope="app/pages/partners/widgets/edit.info.html"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div ba-panel ba-panel-title="Info" ba-panel-class="with-scroll">
+                        <div include-with-scope="app/pages/partners/widgets/edit.image.html"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-8">
-            <div ba-panel ba-panel-title="Datos particulares del Partner" ba-panel-class="with-scroll">
-                <div include-with-scope="app/pages/partners/widgets/edit.details.html"></div>
+            <div class="col-md-8">
+                <div ba-panel ba-panel-title="Datos particulares del Partner" ba-panel-class="with-scroll">
+                    <div include-with-scope="app/pages/partners/widgets/edit.details.html"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div ng-if="!partner" ng-controller="PartnersCtrl">
-        <div class="form-group ">
-            <ui-select ng-change="partnerSelected()" ng-model="partners.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true" search-enabled="true">
-                <ui-select-match placeholder="Disabled Selection">
-                    <span> {{$select.selected}}</span>
-                </ui-select-match>
-                <ui-select-choices repeat="p in [1, 2, 3, 4] | filter: $select.search">
-                    <span id="code">{{p}}</span>
-                </ui-select-choices>
-            </ui-select>
-        </div>
-    </div>
+
 
 </div>

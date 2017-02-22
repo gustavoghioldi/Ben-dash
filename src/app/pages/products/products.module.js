@@ -5,20 +5,20 @@
 (function() {
     'use strict';
 
-    angular.module('BlurAdmin.pages.benefits', [
-            'BlurAdmin.pages.benefits.list',
-            'BlurAdmin.pages.benefits.edit',
-            'BlurAdmin.pages.benefits.add'
+    angular.module('BlurAdmin.pages.products', [
+            'BlurAdmin.pages.products.list',
+            'BlurAdmin.pages.products.edit',
+            'BlurAdmin.pages.products.add'
         ])
         .config(routeConfig);
 
     /** @ngInject */
     function routeConfig($stateProvider) {
         $stateProvider
-            .state('benefits', {
+            .state('products', {
                 abstract: true,
-                url: '/benefits',
-                title: 'Beneficios',
+                url: '/products',
+                title: 'Productos',
                 template: '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
                 sidebarMeta: {
                     icon: 'ion-stats-bars',
