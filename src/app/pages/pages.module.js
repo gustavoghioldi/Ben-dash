@@ -22,6 +22,7 @@
             'BlurAdmin.pages.suport',
             'BlurAdmin.pages.admin',
 
+
         ])
         .config(routeConfig);
 

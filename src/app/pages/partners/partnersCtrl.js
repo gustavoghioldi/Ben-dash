@@ -49,7 +49,6 @@
 
         $scope.delete = function(key) {
             partnersRef.child(key).remove();
-            $state.go('partners.list');
         }
 
         $scope.edit = function(key) {
@@ -80,7 +79,9 @@
                 "preventOpenDuplicates": false
             })
         }
+
     }
+
 
 
 })();

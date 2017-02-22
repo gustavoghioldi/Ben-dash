@@ -1,0 +1,20 @@
+<div class="modal-content" ng-controller="PartnersEditCtrl">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="ion-ios-close-empty sn-link-close"></em>
+    </button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="partners.details.branchs.name">Nombre</label>
+                <input type="text" class="form-control" id="partners.details.branchs.name" ng-model="partners.details.branchs.name" placeholder="Nombre">
+            </div>
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="addBranch(this)">Cancel</button>
+    </div>
+</div>

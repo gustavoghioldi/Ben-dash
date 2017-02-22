@@ -8,7 +8,7 @@
     angular.module('BlurAdmin.pages.partners', [
             'BlurAdmin.pages.partners.list',
             'BlurAdmin.pages.partners.add',
-            'BlurAdmin.pages.partners.edit'
+            'BlurAdmin.pages.partners.edit',
         ])
         .config(routeConfig);
 

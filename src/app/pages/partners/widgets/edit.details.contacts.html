@@ -1,11 +1,15 @@
 <form>
     <div class="form-group">
-        <label for="position">Código</label>
+
+        <label for="position">Cargo</label>
         <input type="text" class="form-control" ng-model="partner.details.contacts.position" placeholder="Cargo en el partner">
         <label for="name">Nombre</label>
         <input type="text" class="form-control" ng-model="partner.details.contacts.name" placeholder="Nombre del Contacto">
-        <input ng-model="partner.details.contacts.emails" type="text" tag-input="primary" data-role="tagsinput" placeholder="Agregar emails">
-        <input ng-model="partner.details.contacts.phones" type="text" tag-input="primary" data-role="tagsinput" placeholder="Agregar Telfonos">
+
+        <label for="emails">Emails</label>
+        <input class="form-control" ng-model="partner.details.contacts.emails" type="text" placeholder="Agregar emails">
+        <label for="phones">Teléfonos</label>
+        <input class="form-control" ng-model="partner.details.contacts.phones" type="text" placeholder="Agregar Telfonos">
     </div>
     <button type="button" class="btn btn-danger" ng-click="editInfo('contacts')">Add</button>
 </form>
