@@ -44,13 +44,22 @@
                     // Handle successful uploads on complete
                     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
                     console.log(uploadTask.snapshot);
+                    configRef.set({
+                        name: $scope.conf.name,
+                        description: $scope.conf.description,
+                        price: $scope.conf.price,
+                        image: uploadTask.snapshot.downloadURL
+                    });
                 });
             }
+
+
 
             configRef.set({
                 name: $scope.conf.name,
                 description: $scope.conf.description,
-                price: $scope.conf.price
+                price: $scope.conf.price,
+                image: uploadTask.snapshot.downloadURL
             });
         }
 

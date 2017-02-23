@@ -34,6 +34,10 @@
             });
         }
 
+        $scope.addCategory = function() {
+            $state.go('categories.add');
+        }
+
         $scope.delete = function(key) {
             categoriesRef.child(key).remove();
             $state.go('categories.list');
@@ -41,12 +45,12 @@
 
         $scope.edit = function(key) {
             console.log(key);
-            $state.go('partners.edit', { key: key });
+            $state.go('categories.edit', { key: key });
         }
 
         $scope.view = function(key) {
             console.log(key);
-            $state.go('partners.view', { key: key });
+            $state.go('categories.view', { key: key });
         }
 
     }
