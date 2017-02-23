@@ -3,18 +3,85 @@
         <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
       <em class="ion-ios-close-empty sn-link-close"></em>
     </button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Crear Nueva Sucursal</h4>
     </div>
     <div class="modal-body">
         <form>
             <div class="form-group">
                 <label for="partners.details.branchs.name">Nombre</label>
                 <input type="text" class="form-control" id="partners.details.branchs.name" ng-model="partners.details.branchs.name" placeholder="Nombre">
+                <label for="partners.details.branchs.address">Dirección</label>
+                <input type="text" class="form-control" id="partners.details.branchs.address" ng-model="partners.details.branchs.address" placeholder="Dirección">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="partners.details.branchs.state">Provincia</label>
+                        <input type="text" class="form-control" id="partners.details.branchs.state" ng-model="partners.details.branchs.state" placeholder="Provincia">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="partners.details.branchs.city">Ciudad</label>
+                        <input type="text" class="form-control" id="partners.details.branchs.city" ng-model="partners.details.branchs.city" placeholder="Ciudad">
+                    </div>
+                </div>
             </div>
 
+            <div class="form-group">
+                <h6>Geolocalización</h6>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="partners.details.branchs.latitude">Latitud</label>
+                        <input type="text" class="form-control" id="partners.details.branchs.latitude" ng-model="partners.details.branchs.latitude" placeholder="Latitud">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="partners.details.branchs.longitude">Longitud</label>
+                        <input type="text" class="form-control" id="partners.details.branchs.longitude" ng-model="partners.details.branchs.longitude" placeholder="Longitud">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <table>
+                            <tr>
+                                <td>Lunes</td>
+                                <td>Martes</td>
+                                <td>Miercoles</td>
+                                <td>Jueves</td>
+                                <td>Viernes</td>
+                                <td>Sabado</td>
+                                <td>Domingo</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ba-switcher switcher-style="primary" switcher-value="partners.details.branchs.monday"></ba-switcher>
+                                </td>
+                                <td>
+                                    <ba-switcher switcher-style="primary" switcher-value="partners.details.branchs.thursday"></ba-switcher>
+                                </td>
+                                <td>
+                                    <ba-switcher switcher-style="primary" switcher-value="partners.details.branchs.wednesday"></ba-switcher>
+                                </td>
+                                <td>
+                                    <ba-switcher switcher-style="primary" switcher-value="partners.details.branchs.tuesday"></ba-switcher>
+                                </td>
+                                <td>
+                                    <ba-switcher switcher-style="primary" switcher-value="partners.details.branchs.friday"></ba-switcher>
+                                </td>
+                                <td>
+                                    <ba-switcher switcher-style="primary" switcher-value="partners.details.branchs.sunday"></ba-switcher>
+                                </td>
+                                <td>
+                                    <ba-switcher switcher-style="primary" switcher-value="partners.details.branchs.saturday"></ba-switcher>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-primary" ng-click="addBranch(this)">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click="addBranch(this)">Guardar</button>
     </div>
 </div>

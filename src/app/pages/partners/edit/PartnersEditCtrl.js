@@ -39,14 +39,26 @@
             }
         }
         $scope.deleteBranch = function(key) {
-            console.log("delete Branck");
+            console.log("delete Branch");
             partnersRef.child($stateParams.key + "/details/branchs/" + key).remove();
         }
         $scope.addBranch = function(modal) {
             console.log("addBranch");
             console.log(modal.$dismiss());
             partnersRef.child($stateParams.key + "/details/branchs").push({
-                name: $scope.partners.details.branchs.name
+                name: $scope.partners.details.branchs.name,
+                address: $scope.partners.details.branchs.address || null,
+                state: $scope.partners.details.branchs.state || null,
+                city: $scope.partners.details.branchs.city || null,
+                latitude: $scope.partners.details.branchs.latitude || null,
+                longitude: $scope.partners.details.branchs.longitude || null,
+                monday: $scope.partners.details.branchs.monday || null,
+                thursday: $scope.partners.details.branchs.thursday || null,
+                wednesday: $scope.partners.details.branchs.wednesday || null,
+                tuesday: $scope.partners.details.branchs.tuesday || null,
+                friday: $scope.partners.details.branchs.friday || null,
+                sunday: $scope.partners.details.branchs.sunday || null,
+                saturday: $scope.partners.details.branchs.saturday || null
             });
         }
 

@@ -1,6 +1,6 @@
 <div>
     <div class="add-row-editable-table">
-        <button class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/partners/widgets/edit.details.branchs.modal.html', 'md')">Crear Sucursal</button>
+        <button class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/partners/widgets/edit.details.branchs.modal.html', 'lg')">Crear Sucursal</button>
     </div>
 
     <div class="horizontal-scroll">
@@ -19,8 +19,8 @@
 
                     <td>{{item.name}}</td>
                     <td class="align-right">
-
-
+                        <button class="btn btn-xs btn-success btn-raised" ng-click="viewBranch(key)">view</button>
+                        <button class="btn btn-xs btn-primary btn-raised" ng-click="editBranch(key)">edit</button>
                         <button class="btn btn-xs btn-danger btn-raised" ng-click="deleteBranch(key)">delete</button>
                     </td>
                 </tr>
