@@ -6,6 +6,7 @@
     'use strict';
 
     angular.module('BlurAdmin.pages.partners', [
+            'ui.select', 'ngSanitize',
             'BlurAdmin.pages.partners.list',
             'BlurAdmin.pages.partners.add',
             'BlurAdmin.pages.partners.edit',
