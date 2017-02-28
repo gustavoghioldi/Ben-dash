@@ -1,8 +1,15 @@
 <form>
     <div class="form-group">
-        <label for="name">Nombre de la Comunidad</label>
-        <input type="text" class="form-control" ng-model="conf.name" placeholder="Nombre">
+
+        <label for="conf.legals.landing">Aviso legal común a todos la landing</label>
+        <textarea class="form-control" ng-model="conf.legals.landing" placeholder="Aviso legal común para todos la landing page de la comunidad"></textarea>
+
+        <label for="conf.legals.benefits">Aviso legal común a todos los Beneficios</label>
+        <textarea class="form-control" ng-model="conf.legals.benefits" placeholder="Aviso legal común para todos los Beneficios"></textarea>
+
+        <label for="conf.legals.payments">Aviso legal común a todos los pagos</label>
+        <textarea class="form-control" ng-model="conf.legals.payments" placeholder="Aviso legal común para todos los pagos"></textarea>
     </div>
 
-    <button type="button" class="btn btn-danger" ng-click="onClickEdit()">Add</button>
+    <button type="button" class="btn btn-primary" ng-click="edit('legals')">Guardar</button>
 </form>
