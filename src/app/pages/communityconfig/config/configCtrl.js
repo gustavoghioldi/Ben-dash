@@ -5,7 +5,7 @@
 (function() {
     'use strict';
 
-    angular.module('BlurAdmin.pages.communityconfig.config')
+    angular.module('BlurAdmin.pages.communityconfig')
         .controller('ConfigCtrl', ConfigCtrl);
 
     /** @ngInject */
@@ -22,7 +22,7 @@
             console.log($scope.categories);
         });
 
-        $scope.changeOrderCategories = function(e) {
+        $scope.changeOrderCategories = function() {
             categoriesRef.set($scope.categories);
         }
 
@@ -52,20 +52,47 @@
                     });
                 });
             }
-
-
-
-            configRef.set({
-                name: $scope.conf.name,
-                description: $scope.conf.description,
-                price: $scope.conf.price,
-                image: uploadTask.snapshot.downloadURL
-            });
+            configRef.update($scope.conf);
         }
 
+        $scope.edit = function(kinda) {
+            console.log(kinda);
+            if (kinda == 'landing') {
+                configRef.child('landing').update($scope.conf.landing);
+            }
 
+            if (kinda == 'seo') {
+                configRef.child('seo').update($scope.conf.seo);
+            }
 
+            if (kinda == 'social') {
+                configRef.child('social').update($scope.conf.social);
+            }
 
+            if (kinda == 'hero') {
+                configRef.child('hero').update($scope.conf.hero);
+            }
+
+            if (kinda == 'webPriority') {
+                configRef.child('webPriority').update($scope.conf.webPriority);
+            }
+
+            if (kinda == 'legals') {
+                configRef.child('legals').update($scope.conf.legals);
+            }
+
+            if (kinda == 'texts') {
+                configRef.child('texts').update($scope.conf.texts);
+            }
+
+            if (kinda == 'footer') {
+                configRef.child('footer').update($scope.conf.footer);
+            }
+
+            if (kinda == 'webHooks') {
+                configRef.child('webHooks').update($scope.conf.webHooks);
+            }
+        }
 
     }
 
