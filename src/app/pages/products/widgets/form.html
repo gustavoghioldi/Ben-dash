@@ -1,17 +1,31 @@
-<form>
+<form ng-controller="ProductsCtrl">
     <div class="form-group">
-        <label for="name">Nombre de la Comunidad</label>
-        <input type="text" class="form-control" ng-model="conf.name" placeholder="Nombre">
-        <label for="name">Imagen</label>
-        <input type="file" id="file">
+        <label for="sku">SKU</label>
+        <input type="text" class="form-control" ng-model="products.sku" placeholder="SKU">
 
-        <label for="name">Descripción</label>
-        <textarea class="form-control" ng-model="conf.description" placeholder="Breve Descripcion"></textarea>
-        <label for="name">Precio de suscripción</label>
-        <input type="number" class="form-control" ng-model="conf.price" placeholder="Precio">
-        <label for="name">email de contacto</label>
-        <input type="email" class="form-control" ng-model="conf.email" placeholder="email">
+        <label for="sku">Nombre</label>
+        <input type="text" class="form-control" ng-model="products.name" placeholder="Nombre">
+        <label for="sku">Tipo</label>
+
+        <div class="checkbox-demo-row">
+            <div class="input-demo radio-demo row">
+                <div class="col-md-4">
+                    <label class="radio-inline custom-radio nowrap"></label>
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" ng-model="products.type" value="basic">
+                    <span>Básico</span>
+                </div>
+                <div class="col-md-4">
+                    <label class="radio-inline custom-radio nowrap"></label>
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" ng-model="products.type" value="discount">
+                    <span>Descuento</span>
+                </div>
+                <div class="col-md-4">
+                    <label class="radio-inline custom-radio nowrap"></label>
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" ng-model="products.type" value="cupon">
+                    <span>Cupón</span>
+                </div>
+            </div>
+        </div>
     </div>
-    {{name}}
-    <button type="button" class="btn btn-danger" ng-click="onClickEdit()">Add</button>
+    <button type="button" class="btn btn-success" ng-click="createProduct()">Guardar</button>
 </form>
