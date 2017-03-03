@@ -5,32 +5,25 @@
         .controller('ProductsCtrl', ProductsCtrl);
 
     /** @ngInject */
-    function ProductsCtrl($scope, $state, toastr) {
+    function ProductsCtrl($scope, $state) {
         console.log("ProductsCtrl...");
 
         productsRef.on('value', function(ss) {
             $scope.products = ss.val();
             console.log($scope.products);
 
+            $scope.productsArray = [];
+
+            ss.forEach(function(ssChild) {
+                var key = ssChild.key;
+                var aux = { name: ssChild.val().name, key: key };
+                $scope.productsArray.push(aux);
+                console.log($scope.productsArray);
+            });
         });
 
-        $scope.toast = function() {
-            toastr.success('Agregado con exito', 'ya puede gestionar sta categoria', {
-                "autoDismiss": false,
-                "positionClass": "toast-top-full-width",
-                "type": "success",
-                "timeOut": "5000",
-                "extendedTimeOut": "2000",
-                "allowHtml": false,
-                "closeButton": false,
-                "tapToDismiss": true,
-                "progressBar": false,
-                "newestOnTop": true,
-                "maxOpened": 0,
-                "preventDuplicates": false,
-                "preventOpenDuplicates": false
-            })
-        }
+
+
 
         $scope.createProduct = function() {
             productsRef.orderByChild("sku").equalTo($scope.products.sku).on('value', function(ss) {
@@ -41,6 +34,7 @@
                         type: $scope.products.type
                     }).key;
                     console.log(key);
+                    $state.go('products.edit', { key: key });
                 }
             });
         }
