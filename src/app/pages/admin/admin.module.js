@@ -6,7 +6,9 @@
     'use strict';
 
     angular.module('BlurAdmin.pages.admin', [
-            'BlurAdmin.pages.admin.init'
+            'BlurAdmin.pages.admin.init',
+            'BlurAdmin.pages.admin.rols',
+            'BlurAdmin.pages.admin.users'
         ])
         .config(routeConfig);
 
@@ -16,11 +18,11 @@
             .state('admin', {
                 abstract: true,
                 url: '/admin',
-                title: 'Admin',
+                title: 'Administración',
                 template: '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
                 sidebarMeta: {
                     icon: 'ion-stats-bars',
-                    order: 150,
+                    order: 1,
                 },
             });
 
