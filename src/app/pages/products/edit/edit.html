@@ -1,0 +1,44 @@
+<div class="widgets">
+
+    <div ng-controller="ProductsCtrl">
+        <div class="row ">
+            <div class="form-group ">
+                <ui-select ng-change="productSelected()" ng-model="products.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true" search-enabled="true">
+                    <ui-select-match placeholder="Cambiar Producto a Editar">
+                        <span> {{$select.selected.name}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="p in productsArray | filter: $select.search">
+                        <span id="code">{{p.name}}</span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="product" ng-controller="ProductsEditCtrl">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <div ba-panel ba-panel-title="Imagen Institucional" ba-panel-class="with-scroll">
+                        <div include-with-scope="app/pages/products/widgets/edit.info.html"></div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div ba-panel ba-panel-title="Info" ba-panel-class="with-scroll">
+                        <div include-with-scope="app/pages/products/widgets/edit.images.html"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div ba-panel ba-panel-title="Datos particulares del Producto" ba-panel-class="with-scroll">
+                    <div include-with-scope="app/pages/products/widgets/edit.details.html"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

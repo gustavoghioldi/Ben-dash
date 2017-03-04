@@ -5,31 +5,34 @@
         .controller('ProductsCtrl', ProductsCtrl);
 
     /** @ngInject */
-    function ProductsCtrl($scope, $state, toastr) {
+    function ProductsCtrl($scope, $state) {
         console.log("ProductsCtrl...");
 
         productsRef.on('value', function(ss) {
             $scope.products = ss.val();
             console.log($scope.products);
 
+            $scope.productsArray = [];
+
+            ss.forEach(function(ssChild) {
+                var key = ssChild.key;
+                var aux = { name: ssChild.val().name, key: key };
+                $scope.productsArray.push(aux);
+                console.log($scope.productsArray);
+            });
         });
 
-        $scope.toast = function() {
-            toastr.success('Agregado con exito', 'ya puede gestionar sta categoria', {
-                "autoDismiss": false,
-                "positionClass": "toast-top-full-width",
-                "type": "success",
-                "timeOut": "5000",
-                "extendedTimeOut": "2000",
-                "allowHtml": false,
-                "closeButton": false,
-                "tapToDismiss": true,
-                "progressBar": false,
-                "newestOnTop": true,
-                "maxOpened": 0,
-                "preventDuplicates": false,
-                "preventOpenDuplicates": false
-            })
+        $scope.productSelected = function() {
+            console.log($scope.products.selected);
+            console.log($scope.products.selected.key);
+
+            $scope.edit($scope.products.selected.key);
+        }
+
+        $scope.edit = function(key) {
+            console.log('ProductsCtrl.edit ...');
+            console.log(key);
+            $state.go('products.edit', { key: key });
         }
 
         $scope.createProduct = function() {
@@ -41,6 +44,7 @@
                         type: $scope.products.type
                     }).key;
                     console.log(key);
+                    $state.go('products.edit', { key: key });
                 }
             });
         }
