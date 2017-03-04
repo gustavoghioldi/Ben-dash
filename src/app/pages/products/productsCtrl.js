@@ -22,8 +22,18 @@
             });
         });
 
+        $scope.productSelected = function() {
+            console.log($scope.products.selected);
+            console.log($scope.products.selected.key);
 
+            $scope.edit($scope.products.selected.key);
+        }
 
+        $scope.edit = function(key) {
+            console.log('ProductsCtrl.edit ...');
+            console.log(key);
+            $state.go('products.edit', { key: key });
+        }
 
         $scope.createProduct = function() {
             productsRef.orderByChild("sku").equalTo($scope.products.sku).on('value', function(ss) {

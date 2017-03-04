@@ -15,6 +15,10 @@
                 url: '/edit',
                 templateUrl: 'app/pages/products/edit/edit.html',
                 title: 'Editar',
+                controller: 'ProductsEditCtrl',
+                params: {
+                    'key': false
+                },
                 sidebarMeta: {
                     order: 100,
                 },

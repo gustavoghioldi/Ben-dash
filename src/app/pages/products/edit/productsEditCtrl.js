@@ -12,7 +12,7 @@
         if ($stateParams.key) {
             productsRef.child($stateParams.key).on('value', function(ss) {
                 console.log(ss.val());
-                $scope.products = ss.val();
+                $scope.product = ss.val();
             });
         }
 
