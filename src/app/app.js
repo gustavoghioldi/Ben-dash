@@ -26,6 +26,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
+//json: https://benefit-cb2e2.firebaseio.com/communities.json
+
 var categoriesRef = firebase.database().ref('/communities/la_caja/categories');
 var configRef = firebase.database().ref('/communities/la_caja/config');
 var partnersRef = firebase.database().ref('/communities/la_caja/partners');
