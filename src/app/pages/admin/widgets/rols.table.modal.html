@@ -8,8 +8,8 @@
     <div class="modal-body">
         <form>
             <div class="form-group">
-                <label for="partners.details.branchs.name">Nombre</label>
-                <input type="text" class="form-control" id="partners.details.branchs.name" ng-model="partners.details.branchs.name" placeholder="Nombre">
+                <label for="rol.name">Nombre</label>
+                <input type="text" class="form-control" ng-model="rol.name" placeholder="Nombre">
 
             </div>
 
@@ -37,25 +37,25 @@
                                             READ
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.read.admin"></switch>
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.read.categories"></switch>
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.read.conf"></switch>
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.read.members"></switch>
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.read.partners"></switch>
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.read.products"></switch>
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.read.suport"></switch>
                                         </td>
                                     </tr>
                                     <tr>
@@ -63,25 +63,25 @@
                                             WRITE
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.write.admin"></switch>
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.write.categories"></switch>
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.write.conf"></switch>
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.write.members"></switch>
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.write.partners"></switch>
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.write.products"></switch>
                                         </td>
                                         <td>
-                                            <switch color="primary"></switch>
+                                            <switch color="primary" ng-model="rol.write.suport"></switch>
                                         </td>
                                     </tr>
                                 </tbody>

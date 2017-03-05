@@ -25,6 +25,15 @@
 
             });
         }
+
+        $scope.addRol = function(modal) {
+            modal.$dismiss();
+            rolsRef.push({
+                name: $scope.rol.name,
+                read: $scope.rol.read,
+                write: $scope.rol.write
+            });
+        }
     }
 
 
