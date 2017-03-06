@@ -9,6 +9,7 @@
 
                     <th>SKU</th>
                     <th>Nombre</th>
+                    <th>Partner</th>
                     <th>Tipo</th>
                     <th>Categoria</th>
                     <th class="align-right">Actions</th>
@@ -16,17 +17,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in products" class="no-top-border">
+                <tr ng-repeat="(key, item) in products" class="no-top-border">
 
                     <td>{{item.sku}}</td>
                     <td>{{item.name}}</td>
+                    <td>{{item.partner.name}}</td>
                     <td>{{item.type}}</td>
                     <td>{{item.category.name}}</td>
                     <td class="align-right">
 
                         <button class="btn btn-xs btn-primary btn-raised">view</button>
                         <button class="btn btn-xs btn-warning btn-raised">edit</button>
-                        <button class="btn btn-xs btn-danger btn-raised">delete</button>
+                        <button class="btn btn-xs btn-danger btn-raised" ng-click="delete(key)">delete</button>
                     </td>
                 </tr>
             </tbody>
