@@ -1,0 +1,16 @@
+<form>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="basicPrice">Precio</label>
+                <input type="number" class="form-control" ng-model="product.details.price.basicPrice" />
+            </div>
+            <div class="col-md-6">
+                <label for="discountPrice">Precio con descuento</label>
+                <input type="number" class="form-control" ng-model="product.details.price.discountPrice" />
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-danger" ng-click="editInfo('price')">Add</button>
+</form>

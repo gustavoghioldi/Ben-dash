@@ -1,31 +1,42 @@
 <form ng-controller="ProductsCtrl">
     <div class="form-group">
         <label for="sku">SKU</label>
-        <input type="text" class="form-control" ng-model="products.sku" placeholder="SKU">
+        <input type="text" class="form-control" ng-model="product.sku" placeholder="SKU">
 
         <label for="sku">Nombre</label>
-        <input type="text" class="form-control" ng-model="products.name" placeholder="Nombre">
+        <input type="text" class="form-control" ng-model="product.name" placeholder="Nombre">
         <label for="sku">Tipo</label>
 
         <div class="checkbox-demo-row">
             <div class="input-demo radio-demo row">
                 <div class="col-md-4">
                     <label class="radio-inline custom-radio nowrap"></label>
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" ng-model="products.type" value="basic">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" ng-model="product.type" value="basic">
                     <span>Básico</span>
                 </div>
                 <div class="col-md-4">
                     <label class="radio-inline custom-radio nowrap"></label>
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" ng-model="products.type" value="discount">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" ng-model="product.type" value="discount">
                     <span>Descuento</span>
                 </div>
                 <div class="col-md-4">
                     <label class="radio-inline custom-radio nowrap"></label>
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" ng-model="products.type" value="cupon">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" ng-model="product.type" value="cupon">
                     <span>Cupón</span>
                 </div>
             </div>
         </div>
     </div>
+    <div class="form-group ">
+        <ui-select ng-model="product.category" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true" search-enabled="true">
+            <ui-select-match placeholder="Categoria">
+                <span> {{$select.selected.category.name}}</span>
+            </ui-select-match>
+            <ui-select-choices repeat="p in categoriesArray | filter: $select.search">
+                <span id="code">{{p.category.name}}</span>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+    {{product}}
     <button type="button" class="btn btn-success" ng-click="createProduct()">Guardar</button>
 </form>
