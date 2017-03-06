@@ -1,0 +1,35 @@
+<div ng-controller="AdminUsersCtrl">
+    <div class="add-row-editable-table">
+        <button class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/admin/widgets/users.table.modal.html', 'lg')">Crear Usuario</button>
+    </div>
+    <div class="horizontal-scroll">
+        <table class="table table-hover">
+            <thead>
+                <tr class="black-muted-bg">
+
+                    <th>Nombre</th>
+                    <th>email</th>
+                    <th>Rol</th>
+
+                    <th class="align-right">Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="(key, item) in users" class="no-top-border">
+
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.rol.name}}</td>
+                    <td class="align-right">
+
+                        <button class="btn btn-xs btn-primary btn-raised" ng-click="view(key)">view</button>
+                        <button class="btn btn-xs btn-warning btn-raised" ng-click="edit(key)">edit</button>
+                        <button class="btn btn-xs btn-danger btn-raised" ng-click="delete(key)">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,31 @@
+<div ng-controller="AdminRolsCtrl">
+    <div class="add-row-editable-table">
+        <button class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/admin/widgets/rols.table.modal.html', 'lg')">Crear Rol</button>
+    </div>
+    <div class="horizontal-scroll">
+        <table class="table table-hover">
+            <thead>
+                <tr class="black-muted-bg">
+
+                    <th>Rol</th>
+
+                    <th class="align-right">Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="(key, item) in rols" class="no-top-border">
+
+                    <td>{{item.name}}</td>
+                    <td class="align-right">
+
+                        <button class="btn btn-xs btn-primary btn-raised" ng-click="view(key)">view</button>
+                        <button class="btn btn-xs btn-warning btn-raised" ng-click="edit(key)">edit</button>
+                        <button class="btn btn-xs btn-danger btn-raised" ng-click="delete(key)">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

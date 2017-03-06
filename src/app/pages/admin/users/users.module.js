@@ -5,18 +5,18 @@
 (function() {
     'use strict';
 
-    angular.module('BlurAdmin.pages.admin.init', [])
+    angular.module('BlurAdmin.pages.admin.users', [])
         .config(routeConfig);
 
     /** @ngInject */
     function routeConfig($stateProvider) {
         $stateProvider
-            .state('admin.init', {
-                url: '/init',
-                templateUrl: 'app/pages/admin/init/init.html',
-                title: 'Principal',
+            .state('admin.users', {
+                url: '/users',
+                templateUrl: 'app/pages/admin/users/users.html',
+                title: 'Usuarios',
                 sidebarMeta: {
-                    order: 1,
+                    order: 3,
                 },
             });
     }

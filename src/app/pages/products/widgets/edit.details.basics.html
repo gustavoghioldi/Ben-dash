@@ -1,0 +1,10 @@
+<form>
+    <div class="form-group">
+        <label for="description">Descripción</label>
+        <textarea class="form-control" ng-model="product.details.basics.description">  </textarea>
+        <label for="shortDescription">Breve Descripción</label>
+        <textarea class="form-control" ng-model="product.details.basics.shortDescription">  </textarea>
+    </div>
+
+    <button type="button" class="btn btn-danger" ng-click="editInfo('basics')">Add</button>
+</form>
