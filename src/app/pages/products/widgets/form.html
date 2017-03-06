@@ -37,6 +37,17 @@
             </ui-select-choices>
         </ui-select>
     </div>
-    {{product}}
+
+    <div class="form-group ">
+        <ui-select ng-model="product.partner" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true" search-enabled="true">
+            <ui-select-match placeholder="Partner">
+                <span> {{$select.selected.partner.name}}</span>
+            </ui-select-match>
+            <ui-select-choices repeat="p in partnersArray | filter: $select.search">
+                <span id="code">{{p.partner.name}}</span>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+
     <button type="button" class="btn btn-success" ng-click="createProduct()">Guardar</button>
 </form>

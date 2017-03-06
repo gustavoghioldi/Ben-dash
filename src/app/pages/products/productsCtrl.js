@@ -38,6 +38,21 @@
             });
         });
 
+        partnersRef.on('value', function(ss) {
+
+            $scope.partners = ss.val();
+            console.log($scope.partners);
+
+            $scope.partnersArray = [];
+
+            ss.forEach(function(ssChild) {
+                var key = ssChild.key;
+                var aux = { partner: ssChild.val(), key: key };
+                $scope.partnersArray.push(aux);
+                console.log($scope.partnersArray);
+            });
+        });
+
         $scope.productSelected = function() {
             console.log($scope.products.selected);
             console.log($scope.products.selected.key);
@@ -51,6 +66,12 @@
             $state.go('products.edit', { key: key });
         }
 
+        $scope.delete = function(key) {
+            console.log(key);
+            productsRef.child(key).remove();
+            $state.go('products.list');
+        }
+
         $scope.createProduct = function() {
             productsRef.orderByChild("sku").equalTo($scope.product.sku).on('value', function(ss) {
                 if (!ss.val()) {
@@ -59,7 +80,7 @@
                         sku: $scope.product.sku,
                         type: $scope.product.type,
                         category: $scope.product.category.category,
-
+                        partner: $scope.product.partner.partner
 
                     }).key;
                     console.log(key);
