@@ -30,8 +30,8 @@
             modal.$dismiss();
             rolsRef.push({
                 name: $scope.rol.name,
-                read: $scope.rol.read,
-                write: $scope.rol.write
+                read: $scope.rol.read || null,
+                write: $scope.rol.write || null
             });
         }
     }
