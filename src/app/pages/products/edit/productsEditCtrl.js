@@ -16,6 +16,11 @@
             });
         }
 
+        $scope.editInfo = function(info) {
+                productsRef.child($stateParams.key).update($scope.partner);
+            
+        }
+
 
     }
 
