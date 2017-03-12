@@ -26,6 +26,10 @@
             });
         }
 
+         $scope.delete = function(key) {
+            rolsRef.child(key).remove();
+        }
+
         $scope.addRol = function(modal) {
             modal.$dismiss();
             rolsRef.push({

@@ -16,6 +16,16 @@
             });
         }
 
+         $scope.editInfo = function(info) {
+            console.log("editInfo");
+            console.log($scope.product);
+            if (info == 'price') {
+                console.log($scope.product.details.price);
+                productsRef.child($stateParams.key + '/details/price').update($scope.product.details.price);
+            }
+
+        }
+
 
     }
 
