@@ -1,11 +1,12 @@
 <form>
 
-    <div class="form-group">
-        <img src="https://firebasestorage.googleapis.com/v0/b/benefit-cb2e2.appspot.com/o/images%2FIMG_20161119_193836.jpg?alt=media&token=85a3435f-c368-4bd5-8ed5-0f409dcd879f" alt="" width="200px" height="200px">
 
-        <input type="file" id="file">
-
+    <div class="userpic">
+        <div class="userpic-wrapper">
+            <img ng-src="{{partner.picture}}" ng-click="uploadPicture()">
+        </div>
+        <i class="ion-ios-close-outline" ng-click="removePicture()" ng-if="!noPicture"></i>
+        <a href class="change-userpic" ng-click="uploadPicture()">Change Profile Picture</a>
+        <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
     </div>
-
-    <button type="button" class="btn btn-danger" ng-click="editImage()">Editar</button>
 </form>

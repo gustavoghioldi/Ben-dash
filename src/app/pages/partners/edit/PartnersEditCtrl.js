@@ -5,7 +5,7 @@
         .controller('PartnersEditCtrl', PartnersEditCtrl);
 
     /** @ngInject */
-    function PartnersEditCtrl($scope, $state, toastr, $stateParams, $uibModal) {
+    function PartnersEditCtrl($scope, $state, toastr, fileReader, $filter, $stateParams, $uibModal) {
 
         console.log("PartnersEditCtrl...");
         console.log($stateParams);
@@ -16,17 +16,46 @@
             });
         }
 
+        $scope.uploadPicture = function() {
+            var fileInput = document.getElementById('uploadFile');
+            fileInput.click();
+        };
+
+        $scope.getFile = function() {
+            console.log('getFile');
+            var file = $('#uploadFile').get(0).files[0];
+            var storage = firebase.storage().ref('images/partners')
+
+            var uploadTask = storage.child(file.name).put(file);
+
+            uploadTask.on('state_changed', function(snapshot) {
+                console.log("subiendo");
+            }, function(error) {
+                console.log(error);
+            }, function() {
+                console.log(uploadTask.snapshot.downloadURL);
+                partnersRef.child($stateParams.key).update({
+                    picture: uploadTask.snapshot.downloadURL
+                });
+                fileReader.readAsDataUrl(file, $scope)
+                    .then(function(result) {
+                        $scope.partner.picture = result;
+                    });
+            });
+
+        };
+
         $scope.editDetails = function() {
             console.log("editDetails");
-        }
-
-        $scope.editImage = function() {
-            console.log("editImage");
         }
 
         $scope.editInfo = function(info) {
             console.log("editInfo");
             console.log($scope.partner);
+            if (info == 'basic') {
+                console.log($scope.partner);
+                partnersRef.child($stateParams.key).update($scope.partner);
+            }
             if (info == 'contacts') {
                 console.log($scope.partner.details.contacts);
                 partnersRef.child($stateParams.key + '/details/contacts').update($scope.partner.details.contacts);
@@ -38,11 +67,12 @@
 
             }
         }
-        
+
         $scope.deleteBranch = function(key) {
             console.log("delete Branch");
             partnersRef.child($stateParams.key + "/details/branchs/" + key).remove();
         }
+
         $scope.addBranch = function(modal) {
             console.log("addBranch");
             console.log(modal.$dismiss());

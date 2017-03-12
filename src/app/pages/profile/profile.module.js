@@ -18,7 +18,7 @@
           controller: 'ProfilePageCtrl',
           sidebarMeta: {
             icon: 'ion-grid',
-            order: 300,
+            order: 1,
           }
         });
   }
