@@ -11,6 +11,7 @@
     /** @ngInject */
     function SuportCtrl($scope) {
         console.log('SuportCtrl...');
+        
     }
 
 })();

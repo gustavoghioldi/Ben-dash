@@ -13,9 +13,13 @@
     $stateProvider
         .state('profile', {
           url: '/profile',
-          title: 'Profile',
+          title: 'Mi Perfil',
           templateUrl: 'app/pages/profile/profile.html',
           controller: 'ProfilePageCtrl',
+          sidebarMeta: {
+            icon: 'ion-grid',
+            order: 300,
+          }
         });
   }
 

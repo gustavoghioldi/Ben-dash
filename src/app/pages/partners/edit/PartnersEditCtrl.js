@@ -38,6 +38,7 @@
 
             }
         }
+        
         $scope.deleteBranch = function(key) {
             console.log("delete Branch");
             partnersRef.child($stateParams.key + "/details/branchs/" + key).remove();

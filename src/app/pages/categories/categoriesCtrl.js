@@ -25,7 +25,6 @@
                 if (!ss.val()) {
                     categoriesRef.push({
                         name: $scope.name,
-                        tags: $scope.tags,
                         code: $scope.code
                     });
                 }

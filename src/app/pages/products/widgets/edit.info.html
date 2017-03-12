@@ -1,0 +1,53 @@
+<form>
+    <div class="form-group">
+        <label for="sku">SKU</label>
+        <input type="text" class="form-control" ng-model="product.sku" placeholder="SKU">
+
+        <label for="sku">Nombre</label>
+        <input type="text" class="form-control" ng-model="product.name" placeholder="Nombre">
+        <label for="sku">Tipo</label>
+
+        <div class="checkbox-demo-row">
+            <div class="input-demo radio-demo row">
+                <div class="col-md-4">
+                    <label class="radio-inline custom-radio nowrap"></label>
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" ng-model="product.type" value="basic">
+                    <span>Básico</span>
+                </div>
+                <div class="col-md-4">
+                    <label class="radio-inline custom-radio nowrap"></label>
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" ng-model="product.type" value="discount">
+                    <span>Descuento</span>
+                </div>
+                <div class="col-md-4">
+                    <label class="radio-inline custom-radio nowrap"></label>
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" ng-model="product.type" value="cupon">
+                    <span>Cupón</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group ">
+        <ui-select ng-model="product.category" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true" search-enabled="true">
+            <ui-select-match placeholder="Categoria">
+                <span> {{product.category.name}}</span>
+            </ui-select-match>
+            <ui-select-choices repeat="p in categoriesArray | filter: $select.search">
+                <span id="code">{{p.category.name}}</span>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+
+    <div class="form-group ">
+        <ui-select ng-model="product.partner" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true" search-enabled="true">
+            <ui-select-match placeholder="Partner">
+                <span> {{product.partner.name}}</span>
+            </ui-select-match>
+            <ui-select-choices repeat="p in partnersArray | filter: $select.search">
+                <span id="code">{{p.partner.name}}</span>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+
+    <button type="button" class="btn btn-success" ng-click="createProduct()">Guardar</button>
+</form>

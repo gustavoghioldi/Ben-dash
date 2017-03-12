@@ -38,6 +38,10 @@
             });
         }
 
+        $scope.delete = function(key) {
+            usersRef.child(key).remove();
+        }
+
         $scope.addUser = function(modal) {
             modal.$dismiss();
             usersRef.push({

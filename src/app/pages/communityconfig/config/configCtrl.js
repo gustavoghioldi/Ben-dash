@@ -44,10 +44,10 @@
                     // Handle successful uploads on complete
                     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
                     console.log(uploadTask.snapshot);
-                    configRef.set({
+                    configRef.update({
                         name: $scope.conf.name,
-                        description: $scope.conf.description,
-                        price: $scope.conf.price,
+                        description: $scope.conf.description || null,
+                        price: $scope.conf.price || null,
                         image: uploadTask.snapshot.downloadURL
                     });
                 });
@@ -57,6 +57,7 @@
 
         $scope.edit = function(kinda) {
             console.log(kinda);
+            console.log($scope);
             if (kinda == 'landing') {
                 configRef.child('landing').update($scope.conf.landing);
             }
