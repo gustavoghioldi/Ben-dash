@@ -9,7 +9,7 @@
         .controller('ConfigCtrl', ConfigCtrl);
 
     /** @ngInject */
-    function ConfigCtrl($scope, $state) {
+    function ConfigCtrl($scope, $state, fileReader) {
         console.log("ConfigCtrl...");
 
         configRef.on('value', function(ss) {
@@ -26,34 +26,35 @@
             categoriesRef.set($scope.categories);
         }
 
-        $scope.onClickEdit = function() {
 
-            var file = $('#file').get(0).files[0];
-            if (file) {
-                var database = firebase.database().ref('/data');
-                var storage = firebase.storage().ref('images')
-                    //agregamos la imagen al storage
-                var uploadTask = storage.child(file.name).put(file);
+        $scope.uploadPicture = function() {
+            var fileInput = document.getElementById('uploadFile');
+            fileInput.click();
+        };
 
-                uploadTask.on('state_changed', function(snapshot) {
-                    // Observe state change events such as progress, pause, and resume
-                    // See below for more detail
-                }, function(error) {
-                    console.log(error);
-                }, function() {
-                    // Handle successful uploads on complete
-                    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-                    console.log(uploadTask.snapshot);
-                    configRef.update({
-                        name: $scope.conf.name,
-                        description: $scope.conf.description || null,
-                        price: $scope.conf.price || null,
-                        image: uploadTask.snapshot.downloadURL
-                    });
+        $scope.getFile = function() {
+            console.log('getFile');
+            var file = $('#uploadFile').get(0).files[0];
+            var storage = firebase.storage().ref('images/communities')
+
+            var uploadTask = storage.child(file.name).put(file);
+
+            uploadTask.on('state_changed', function(snapshot) {
+                console.log("subiendo");
+            }, function(error) {
+                console.log(error);
+            }, function() {
+                console.log(uploadTask.snapshot.downloadURL);
+                configRef.update({
+                    picture: uploadTask.snapshot.downloadURL
                 });
-            }
-            configRef.update($scope.conf);
-        }
+                fileReader.readAsDataUrl(file, $scope)
+                    .then(function(result) {
+                        $scope.picture = result;
+                    });
+            });
+
+        };
 
         $scope.edit = function(kinda) {
             console.log(kinda);

@@ -1,10 +1,12 @@
 <form>
-    <div class="form-group">
-        <img ng-src="{{conf.image}}" alt="" width="200px" height="200px">
 
-        <input type="file" id="file">
 
+    <div class="userpic">
+        <div class="userpic-wrapper">
+            <img ng-src="{{conf.picture}}" ng-click="uploadPicture()">
+        </div>
+        <i class="ion-ios-close-outline" ng-click="removePicture()" ng-if="!noPicture"></i>
+        <a href class="change-userpic" ng-click="uploadPicture()">Change Profile Picture</a>
+        <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
     </div>
-
-    <button type="button" class="btn btn-danger" ng-click="onClickEdit()">Add</button>
 </form>
