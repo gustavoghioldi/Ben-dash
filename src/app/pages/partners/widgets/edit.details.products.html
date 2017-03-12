@@ -1,0 +1,24 @@
+<div class="horizontal-scroll" ng-controller="PartnersProductsEditCtrl">
+    <table class="table table-hover">
+        <thead>
+            <tr class="black-muted-bg">
+
+
+                <th>Nombre</th>
+                <th class="align-right">Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(key , item) in products" class="no-top-border">
+
+                <td>{{item.name}}</td>
+                <td class="align-right">
+                    <button class="btn btn-xs btn-success btn-raised" ng-click="viewBranch(key)">view</button>
+                    <button class="btn btn-xs btn-primary btn-raised" ng-click="editBranch(key)">edit</button>
+                    <button class="btn btn-xs btn-danger btn-raised" ng-click="deleteBranch(key)">delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
