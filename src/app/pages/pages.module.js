@@ -20,6 +20,7 @@
             'BlurAdmin.pages.products',
             'BlurAdmin.pages.suport',
             'BlurAdmin.pages.admin',
+            'BlurAdmin.pages.members',
 
 
         ])

@@ -1,0 +1,46 @@
+<div class="modal-content" ng-controller="MembersAddCtrl">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="ion-ios-close-empty sn-link-close"></em>
+    </button>
+        <h4 class="modal-title" id="myModalLabel">Crear Nuevo Miembro</h4>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="dni">DNI</label>
+                        <input type="number" class="form-control" id="dni" ng-model="dni" placeholder="DNI">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email"></label>
+                        <input type="text" class="form-control" id="email" ng-model="email" placeholder="email">
+                    </div>
+                </div>
+
+                <label for="firstname">Nombre</label>
+                <input type="text" class="form-control" id="firstname" ng-model="firstname" placeholder="Nombre">
+                <label for="lastname">Apellido</label>
+                <input type="text" class="form-control" id="lastname" ng-model="lastname" placeholder="Apellido">
+                <label for="address">Dirección</label>
+                <input type="text" class="form-control" id="address" ng-model="address" placeholder="Dirección">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="state">Provincia</label>
+                        <input type="text" class="form-control" id="state" ng-model="state" placeholder="Provincia">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="city">Ciudad</label>
+                        <input type="text" class="form-control" id="city" ng-model="city" placeholder="Ciudad">
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="addMember(this)">Guardar</button>
+    </div>
+</div>
