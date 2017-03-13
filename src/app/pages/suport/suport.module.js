@@ -6,7 +6,8 @@
     'use strict';
 
     angular.module('BlurAdmin.pages.suport', [
-            'BlurAdmin.pages.suport.init'
+            'BlurAdmin.pages.suport.config',
+            'BlurAdmin.pages.suport.tickets'
         ])
         .config(routeConfig);
 

@@ -1,0 +1,34 @@
+<div>
+    <div class="add-row-editable-table">
+        <button class="btn btn-primary" ng-click="addTicketType()">Crear Nuevo Tipo de Tickets</button>
+    </div>
+    <div class="horizontal-scroll">
+        <table class="table table-hover">
+            <thead>
+                <tr class="black-muted-bg">
+
+                    <th>codigo</th>
+                    <th>Nombre</th>
+                    <th>Color</th>
+                    <th class="align-right">Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="(key, item) in ticketTypes" class="no-top-border">
+
+                    <td>{{item.code}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.color}}</td>
+                    <td class="align-right">
+
+                        <button class="btn btn-xs btn-primary btn-raised" ng-click="view(key)">view</button>
+                        <button class="btn btn-xs btn-warning btn-raised" ng-click="edit(key)">edit</button>
+                        <button class="btn btn-xs btn-danger btn-raised" ng-click="delete(key)">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
