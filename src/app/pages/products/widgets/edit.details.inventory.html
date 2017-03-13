@@ -1,0 +1,16 @@
+<form>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="qty">Cantidad</label>
+                <input type="number" class="form-control" ng-model="product.details.inventory.qty" />
+            </div>
+            <div class="col-md-12">
+                <label for="maxPerMember">Compra Máxima por Miembro</label>
+                <input type="number" class="form-control" ng-model="product.details.inventory.maxPerMember" />
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" ng-click="editInfo('inventory')">Guardar</button>
+</form>
