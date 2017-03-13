@@ -72,6 +72,10 @@
             $state.go('products.list');
         }
 
+        $scope.addProducts = function() {
+            $state.go('products.add');
+        }
+
         $scope.createProduct = function() {
             productsRef.orderByChild("sku").equalTo($scope.product.sku).on('value', function(ss) {
                 if (!ss.val()) {
