@@ -6,7 +6,6 @@
     'use strict';
 
     angular.module('BlurAdmin.pages.admin', [
-            'BlurAdmin.pages.admin.init',
             'BlurAdmin.pages.admin.rols',
             'BlurAdmin.pages.admin.users'
         ])
