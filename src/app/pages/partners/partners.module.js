@@ -24,7 +24,7 @@
 
                 sidebarMeta: {
                     icon: 'ion-stats-bars',
-                    order: 150,
+                    order: 15,
                 },
             });
 
