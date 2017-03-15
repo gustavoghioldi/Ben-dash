@@ -5,7 +5,14 @@
         .controller('ProductsCtrl', ProductsCtrl);
 
     /** @ngInject */
-    function ProductsCtrl($scope, $state) {
+    function ProductsCtrl($scope, $state, $uibModal) {
+        $scope.size = 250;
+        $scope.correctionLevel = '';
+        $scope.typeNumber = 0;
+        $scope.inputMode = '';
+        $scope.image = true;
+        $scope.qrcodeString = '';
+
         console.log("ProductsCtrl...");
 
         productsRef.on('value', function(ss) {
@@ -90,6 +97,14 @@
                     console.log(key);
                     $state.go('products.edit', { key: key });
                 }
+            });
+        }
+
+        $scope.open = function(page, size) {
+            $uibModal.open({
+                animation: true,
+                templateUrl: page,
+                size: size,
             });
         }
 

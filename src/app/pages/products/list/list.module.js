@@ -5,7 +5,9 @@
 (function() {
     'use strict';
 
-    angular.module('BlurAdmin.pages.products.list', [])
+    angular.module('BlurAdmin.pages.products.list', [
+
+        ])
         .config(routeConfig);
 
     /** @ngInject */

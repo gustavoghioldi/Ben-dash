@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('BlurAdmin', [
+    'ja.qr',
     'ngAnimate',
     'ui.bootstrap',
     'ui.sortable',
