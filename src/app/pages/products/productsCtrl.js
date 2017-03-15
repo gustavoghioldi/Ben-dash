@@ -6,12 +6,7 @@
 
     /** @ngInject */
     function ProductsCtrl($scope, $state, $uibModal) {
-        $scope.size = 250;
-        $scope.correctionLevel = '';
-        $scope.typeNumber = 0;
-        $scope.inputMode = '';
-        $scope.image = true;
-        $scope.qrcodeString = '';
+
 
         console.log("ProductsCtrl...");
 

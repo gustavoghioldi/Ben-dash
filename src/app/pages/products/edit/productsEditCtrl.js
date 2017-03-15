@@ -6,6 +6,12 @@
 
     /** @ngInject */
     function ProductsEditCtrl($scope, $state, toastr, $stateParams, fileReader, $uibModal) {
+        $scope.size = 250;
+        $scope.correctionLevel = '';
+        $scope.typeNumber = 0;
+        $scope.inputMode = '';
+        $scope.image = true;
+        $scope.qrcodeString = $stateParams.key;
 
         console.log("ProductsEditCtrl...");
         console.log($stateParams);
