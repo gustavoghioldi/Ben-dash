@@ -39,8 +39,11 @@
         }
 
         $scope.delete = function(key) {
-            usersRef.child(key).remove();
+            if (confirm('Esta seguro que desea borrar este usuario?')) {
+                usersRef.child(key).remove();
+            }
         }
+
 
         $scope.addUser = function(modal) {
             modal.$dismiss();

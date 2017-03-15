@@ -26,8 +26,10 @@
             });
         }
 
-         $scope.delete = function(key) {
-            rolsRef.child(key).remove();
+        $scope.delete = function(key) {
+            if (confirm("Esta seguro que desea borrar este Rol?")) {
+                rolsRef.child(key).remove();
+            }
         }
 
         $scope.addRol = function(modal) {
