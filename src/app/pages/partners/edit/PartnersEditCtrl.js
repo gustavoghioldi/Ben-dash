@@ -11,7 +11,7 @@
 
         function initialize() {
             var mapCanvas = document.getElementById('google-maps');
-            var myCenter = new google.maps.LatLng(51.508742, -0.120850);
+            var myCenter = new google.maps.LatLng(-34.6036844, -58.3815591);
             var mapOptions = { center: myCenter, zoom: 17 };
             var map = new google.maps.Map(mapCanvas, mapOptions);
             var marker = new google.maps.Marker({
@@ -118,6 +118,8 @@
                 .then(function(response) {
                     console.log(response.data.results[0].geometry.location.lat);
                     console.log(response.data.results[0].geometry.location.lng);
+                    $scope.partners.details.branchs.latitude = response.data.results[0].geometry.location.lat;
+                    $scope.partners.details.branchs.longitude = response.data.results[0].geometry.location.lng;
                     var mapCanvas = document.getElementById('google-maps');
                     var myCenter = new google.maps.LatLng(response.data.results[0].geometry.location.lat, response.data.results[0].geometry.location.lng);
                     var mapOptions = { center: myCenter, zoom: 17 };
@@ -135,7 +137,6 @@
                 animation: true,
                 templateUrl: page,
                 size: size,
-
             });
         }
 
