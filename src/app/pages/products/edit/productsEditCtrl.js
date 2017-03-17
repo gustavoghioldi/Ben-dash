@@ -39,6 +39,11 @@
                 console.log($scope.product.details.inventory);
                 productsRef.child($stateParams.key + '/details/inventory').update($scope.product.details.inventory);
             }
+
+            if (info == 'calendar') {
+                console.log($scope.product.details.calendar);
+                productsRef.child($stateParams.key + "/details/calendar").update($scope.product.details.calendar);
+            }
         }
 
         $scope.uploadPicture = function() {
