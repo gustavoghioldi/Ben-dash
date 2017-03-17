@@ -25,7 +25,14 @@
             </div>
 
             <div class="form-group">
+
                 <h6>Geolocalización</h6>
+                <button type="button" class="btn btn-primary" ng-click="geolocalizar()">Geolocalizar</button>
+
+                <div ba-panel ba-panel-title="Google Maps">
+                    <div id="google-maps"></div>
+                </div>
+
                 <div class="row">
                     <div class="col-md-6">
                         <label for="partners.details.branchs.latitude">Latitud</label>
