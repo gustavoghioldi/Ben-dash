@@ -5,9 +5,28 @@
         .controller('PartnersEditCtrl', PartnersEditCtrl);
 
     /** @ngInject */
-    function PartnersEditCtrl($scope, $state, toastr, fileReader, $filter, $stateParams, $uibModal) {
+    function PartnersEditCtrl($scope, $state, toastr, fileReader, $filter, $stateParams, $uibModal, $http, $timeout) {
 
         console.log("PartnersEditCtrl...");
+
+        function initialize() {
+            var mapCanvas = document.getElementById('google-maps');
+            var myCenter = new google.maps.LatLng(-34.6036844, -58.3815591);
+            var mapOptions = { center: myCenter, zoom: 17 };
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+            var marker = new google.maps.Marker({
+                position: myCenter,
+                animation: google.maps.Animation.BOUNCE
+            });
+            marker.setMap(map);
+        }
+
+        $timeout(function() {
+            initialize();
+        }, 100);
+
+
+
         console.log($stateParams);
         if ($stateParams.key) {
             partnersRef.child($stateParams.key).on('value', function(ss) {
@@ -93,13 +112,31 @@
             });
         }
 
+        $scope.geolocalizar = function() {
+            console.log("https://maps.googleapis.com/maps/api/geocode/json?address=" + $scope.partners.details.branchs.address);
+            $http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + $scope.partners.details.branchs.address)
+                .then(function(response) {
+                    console.log(response.data.results[0].geometry.location.lat);
+                    console.log(response.data.results[0].geometry.location.lng);
+                    $scope.partners.details.branchs.latitude = response.data.results[0].geometry.location.lat;
+                    $scope.partners.details.branchs.longitude = response.data.results[0].geometry.location.lng;
+                    var mapCanvas = document.getElementById('google-maps');
+                    var myCenter = new google.maps.LatLng(response.data.results[0].geometry.location.lat, response.data.results[0].geometry.location.lng);
+                    var mapOptions = { center: myCenter, zoom: 17 };
+                    var map = new google.maps.Map(mapCanvas, mapOptions);
+                    var marker = new google.maps.Marker({
+                        position: myCenter,
+                        animation: google.maps.Animation.BOUNCE
+                    });
+                    marker.setMap(map);
+                });
 
+        }
         $scope.open = function(page, size) {
             $uibModal.open({
                 animation: true,
                 templateUrl: page,
                 size: size,
-
             });
         }
 

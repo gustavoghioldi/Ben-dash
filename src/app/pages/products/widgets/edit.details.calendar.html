@@ -1,0 +1,57 @@
+<form>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="since">Desde: <em>{{product.details.calendar.since | date:'fullDate' }}</em></label>
+                <input type="date" class="form-control" ng-model="product.details.calendar.since" />
+            </div>
+            <div class="col-md-6">
+                <label for="until">Hasta: <em>{{product.details.calendar.until | date:'fullDate' }}</em></label>
+                <input type="date" class="form-control" ng-model="product.details.calendar.until" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="days">Días</label>
+                <table>
+                    <tr>
+                        <td>Lunes</td>
+                        <td>Martes</td>
+                        <td>Miercoles</td>
+                        <td>Jueves</td>
+                        <td>Viernes</td>
+                        <td>Sabado</td>
+                        <td>Domingo</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ba-switcher switcher-style="primary" switcher-value="product.details.calendar.monday"></ba-switcher>
+                        </td>
+                        <td>
+                            <ba-switcher switcher-style="primary" switcher-value="product.details.calendar.thursday"></ba-switcher>
+                        </td>
+                        <td>
+                            <ba-switcher switcher-style="primary" switcher-value="product.details.calendar.wednesday"></ba-switcher>
+                        </td>
+                        <td>
+                            <ba-switcher switcher-style="primary" switcher-value="product.details.calendar.tuesday"></ba-switcher>
+                        </td>
+                        <td>
+                            <ba-switcher switcher-style="primary" switcher-value="product.details.calendar.friday"></ba-switcher>
+                        </td>
+                        <td>
+                            <ba-switcher switcher-style="primary" switcher-value="product.details.calendar.sunday"></ba-switcher>
+                        </td>
+                        <td>
+                            <ba-switcher switcher-style="primary" switcher-value="product.details.calendar.saturday"></ba-switcher>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" ng-click="editInfo('calendar')">Guardar</button>
+</form>

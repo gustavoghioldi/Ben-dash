@@ -22,6 +22,7 @@
             'BlurAdmin.pages.admin',
             'BlurAdmin.pages.members',
             'BlurAdmin.pages.transactions',
+            'BlurAdmin.pages.campaings',
 
 
         ])
