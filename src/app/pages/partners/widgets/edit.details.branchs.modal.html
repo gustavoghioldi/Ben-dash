@@ -11,17 +11,8 @@
                 <label for="partners.details.branchs.name">Nombre</label>
                 <input type="text" class="form-control" id="partners.details.branchs.name" ng-model="partners.details.branchs.name" placeholder="Nombre">
                 <label for="partners.details.branchs.address">Dirección</label>
-                <input type="text" class="form-control" id="partners.details.branchs.address" ng-model="partners.details.branchs.address" placeholder="Dirección">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="partners.details.branchs.state">Provincia</label>
-                        <input type="text" class="form-control" id="partners.details.branchs.state" ng-model="partners.details.branchs.state" placeholder="Provincia">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="partners.details.branchs.city">Ciudad</label>
-                        <input type="text" class="form-control" id="partners.details.branchs.city" ng-model="partners.details.branchs.city" placeholder="Ciudad">
-                    </div>
-                </div>
+                <input type="text" class="form-control" id="partners.details.branchs.address" ng-model="partners.details.branchs.address" placeholder="Dirección (ej: salta 153, villa constitucion, Santa Fe, Argentina">
+
             </div>
 
             <div class="form-group">
@@ -32,7 +23,14 @@
                 <div ba-panel ba-panel-title="Google Maps">
                     <div id="google-maps"></div>
                 </div>
-
+                <div class="row">
+                    <div class="col-md-4"><label for="">Numero: </label><label for="">{{partners.details.branchs.addressNumber }}</label></div>
+                    <div class="col-md-4"><label for="">calle: </label><label for="">{{partners.details.branchs.street }}</label></div>
+                    <div class="col-md-4"><label for="">Barrio: </label><label for="">{{partners.details.branchs.neighborhood }}</label></div>
+                    <div class="col-md-4"><label for="">ciudad/comuna: </label><label for="">{{partners.details.branchs.city}}</label></div>
+                    <div class="col-md-4"><label for="">Provincia: </label><label for="">{{partners.details.branchs.state}}</label></div>
+                    <div class="col-md-4"><label for="">País: </label><label for="">{{partners.details.branchs.country}}</label></div>
+                </div>
                 <div class="row">
                     <div class="col-md-6">
                         <label for="partners.details.branchs.latitude">Latitud</label>
