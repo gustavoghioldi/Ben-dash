@@ -22,8 +22,18 @@
                 animation: true,
                 templateUrl: page,
                 size: size,
-
             });
+        }
+
+        $scope.view = function(key) {
+
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'app/pages/admin/widgets/rols.view.modal.html',
+                size: 'lg',
+            });
+
+
         }
 
         $scope.delete = function(key) {
