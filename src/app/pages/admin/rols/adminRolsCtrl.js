@@ -37,6 +37,27 @@
             });
         }
 
+        $scope.edit = function(key, item) {
+
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'app/pages/admin/widgets/rols.edit.modal.html',
+                size: 'lg',
+                controller: function($scope) {
+                    $scope.rol = item;
+                    $scope.key = key;
+                    $scope.edit = function(modal) {
+                        modal.$dismiss;
+                        rolsRef.child($scope.key).set({
+                            name: $scope.rol.name,
+                            read: $scope.rol.read || null,
+                            write: $scope.rol.write || null
+                        });
+                    }
+                }
+            });
+        }
+
         $scope.delete = function(key) {
             if (confirm("Esta seguro que desea borrar este Rol?")) {
                 rolsRef.child(key).remove();
