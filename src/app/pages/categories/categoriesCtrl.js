@@ -9,7 +9,7 @@
         .controller('CategoriesCtrl', CategoriesCtrl);
 
     /** @ngInject */
-    function CategoriesCtrl($scope, $state) {
+    function CategoriesCtrl($scope, $state, $uibModal) {
 
         categoriesRef.on('value', function(ss) {
             $scope.categories = ss.val();
@@ -38,18 +38,41 @@
         }
 
         $scope.delete = function(key) {
-            categoriesRef.child(key).remove();
-            $state.go('categories.list');
+            if (confirm("Esta seguro que desea borrar esta categoria?")) {
+                categoriesRef.child(key).remove();
+                $state.go('categories.list');
+            }
         }
 
-        $scope.edit = function(key) {
-            console.log(key);
-            $state.go('categories.edit', { key: key });
+        $scope.edit = function(key, item) {
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'app/pages/categories/widgets/edit.modal.html',
+                size: 'lg',
+                controller: function($scope) {
+                    $scope.category = item;
+                    $scope.key = key;
+                    $scope.edit = function(modal) {
+                        console.log(modal);
+                        modal.$dismiss;
+                        categoriesRef.child($scope.key).set({
+                            name: $scope.category.name,
+                            code: $scope.category.code
+                        });
+                    }
+                }
+            });
         }
 
-        $scope.view = function(key) {
-            console.log(key);
-            $state.go('categories.view', { key: key });
+        $scope.view = function(item) {
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'app/pages/categories/widgets/view.modal.html',
+                size: 'lg',
+                controller: function($scope) {
+                    $scope.category = item;
+                }
+            });
         }
 
     }
