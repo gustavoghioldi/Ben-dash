@@ -26,6 +26,10 @@
         $scope.editInfo = function(info) {
             console.log("editInfo");
             console.log($scope.product);
+            if (info == 'info') {
+                productsRef.child($stateParams.key).update($scope.product);
+            }
+
             if (info == 'basics') {
                 console.log($scope.product.details);
                 productsRef.child($stateParams.key + '/details/basics').update($scope.product.details.basics);
