@@ -88,8 +88,10 @@
         }
 
         $scope.deleteBranch = function(key) {
-            console.log("delete Branch");
-            partnersRef.child($stateParams.key + "/details/branchs/" + key).remove();
+            if (confirm('Esta seguro que desea borrar esta sucursal?')) {
+                console.log("delete Branch");
+                partnersRef.child($stateParams.key + "/details/branchs/" + key).remove();
+            }
         }
 
         $scope.addBranch = function(modal) {
@@ -97,9 +99,12 @@
             console.log(modal.$dismiss());
             partnersRef.child($stateParams.key + "/details/branchs").push({
                 name: $scope.partners.details.branchs.name,
-                address: $scope.partners.details.branchs.address || null,
-                state: $scope.partners.details.branchs.state || null,
+                addressNumber: $scope.partners.details.branchs.addressNumber || null,
+                street: $scope.partners.details.branchs.street || null,
+                neighborhood: $scope.partners.details.branchs.neighborhood || null,
                 city: $scope.partners.details.branchs.city || null,
+                state: $scope.partners.details.branchs.state || null,
+                country: $scope.partners.details.branchs.country || null,
                 latitude: $scope.partners.details.branchs.latitude || null,
                 longitude: $scope.partners.details.branchs.longitude || null,
                 monday: $scope.partners.details.branchs.monday || null,
@@ -116,10 +121,17 @@
             console.log("https://maps.googleapis.com/maps/api/geocode/json?address=" + $scope.partners.details.branchs.address);
             $http.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + $scope.partners.details.branchs.address)
                 .then(function(response) {
-                    console.log(response.data.results[0].geometry.location.lat);
-                    console.log(response.data.results[0].geometry.location.lng);
+                    console.log(response.data.results[0]);
+
                     $scope.partners.details.branchs.latitude = response.data.results[0].geometry.location.lat;
                     $scope.partners.details.branchs.longitude = response.data.results[0].geometry.location.lng;
+                    $scope.partners.details.branchs.addressNumber = response.data.results[0].address_components[0].long_name;
+                    $scope.partners.details.branchs.street = response.data.results[0].address_components[1].long_name;
+                    $scope.partners.details.branchs.neighborhood = response.data.results[0].address_components[2].long_name;
+                    $scope.partners.details.branchs.city = response.data.results[0].address_components[3].long_name;
+                    $scope.partners.details.branchs.state = response.data.results[0].address_components[4].long_name;
+                    $scope.partners.details.branchs.country = response.data.results[0].address_components[5].long_name;
+
                     var mapCanvas = document.getElementById('google-maps');
                     var myCenter = new google.maps.LatLng(response.data.results[0].geometry.location.lat, response.data.results[0].geometry.location.lng);
                     var mapOptions = { center: myCenter, zoom: 17 };

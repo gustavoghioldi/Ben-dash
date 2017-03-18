@@ -70,8 +70,11 @@
 
         $scope.delete = function(key) {
             console.log(key);
-            productsRef.child(key).remove();
-            $state.go('products.list');
+            if (confirm("Esta seguro que desea borrar esta producto?")) {
+                productsRef.child(key).remove();
+                $state.go('products.list');
+            }
+
         }
 
         $scope.addProducts = function() {
