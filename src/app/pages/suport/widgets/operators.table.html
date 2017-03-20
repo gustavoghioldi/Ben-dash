@@ -1,6 +1,6 @@
-<div>
+<div ng-controller="SuportConfigOperatorsCtrl">
     <div class="add-row-editable-table">
-        <button class="btn btn-primary" ng-click="addOperator()">Nuevo Operador</button>
+        <button class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/suport/widgets/operators.modal.html', 'lg')">Crear Operador</button>
     </div>
     <div class="horizontal-scroll">
         <table class="table table-hover">
