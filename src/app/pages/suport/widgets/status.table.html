@@ -1,4 +1,4 @@
-<div>
+<div ng-controller="SuportConfigStatusCtrl">
     <div class="add-row-editable-table">
         <button class="btn btn-primary" ng-click="open('app/pages/suport/widgets/status.modal.html', 'lg')">Crear Nuevo Status de Tickets</button>
     </div>
@@ -7,20 +7,18 @@
             <thead>
                 <tr class="black-muted-bg">
 
-                    <th>codigo</th>
                     <th>Nombre</th>
                     <th class="align-right">Actions</th>
 
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="(key, item) in ticketTypes" class="no-top-border">
+                <tr ng-repeat="(key, item) in status" class="no-top-border">
 
-                    <td>{{item.code}}</td>
+              
                     <td>{{item.name}}</td>
                     <td class="align-right">
 
-                        <button class="btn btn-xs btn-primary btn-raised" ng-click="view(key)">view</button>
                         <button class="btn btn-xs btn-warning btn-raised" ng-click="edit(key)">edit</button>
                         <button class="btn btn-xs btn-danger btn-raised" ng-click="delete(key)">delete</button>
                     </td>
