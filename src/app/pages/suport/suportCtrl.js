@@ -9,9 +9,17 @@
         .controller('SuportCtrl', SuportCtrl);
 
     /** @ngInject */
-    function SuportCtrl($scope) {
+    function SuportCtrl($scope, $state, $uibModal) {
         console.log('SuportCtrl...');
-        
+
+        $scope.open = function(page, size) {
+            $uibModal.open({
+                animation: true,
+                templateUrl: page,
+                size: size,
+
+            });
+        }
     }
 
 })();
