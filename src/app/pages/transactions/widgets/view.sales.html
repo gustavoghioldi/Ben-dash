@@ -1,28 +1,30 @@
 <div ng-controller="TransactionsSalesCtrl">
-   
+
     <div class="horizontal-scroll">
         <table class="table table-hover">
             <thead>
                 <tr class="black-muted-bg">
 
-                    <th>Titulo</th>
-                    <th>Autor</th>
-                    <th>Asignado a</th>
-                    <th>Estado</th>
-                    <th>Ultima Modificación</th>
+                    <th>codigo</th>
+                    <th>Miembro</th>
+                    <th>Partner</th>
+                    <th>Monto</th>
+                    <th>Utilizado</th>
+
                     <th class="align-right">Actions</th>
 
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="(key, item) in ticketTypes" class="no-top-border">
+                <tr ng-repeat="(key, item) in transactions" class="no-top-border" ng-if="item.item.type != 'discount'">
+                    <div ng-if="!item.type.discount">
+                        <td>{{key}}</td>
+                        <td>{{item.member}}</td>
+                        <td>{{item.item.partner.code}}</td>
+                        <td>${{item.item.details.price.discountPrice}}</td>
+                        <td>{{item.used}}</td>
+                    </div>
 
-                    <td>{{item.code}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.color}}</td>
-                    <td>{{item.status}}</td>
-                    <td>{{item.lastUpdate}}</td>
-                    
                 </tr>
             </tbody>
         </table>

@@ -6,6 +6,9 @@
 
     /** @ngInject */
     function TransactionsDiscountCtrl($scope, $state, $stateParams) {
-
+        console.log('TransactionsDiscountCtrl....');
+        transactionsRef.on('value', function(ss) {
+            $scope.transactions = ss.val();
+        });
     }
 })();
