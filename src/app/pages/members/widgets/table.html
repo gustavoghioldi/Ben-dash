@@ -7,7 +7,7 @@
         <table class="table table-hover">
             <thead>
                 <tr class="black-muted-bg">
-
+                    <th>Credencial</th>
                     <th>DNI</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
@@ -19,7 +19,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="(key, item) in members" class="no-top-border">
-
+                    <td>{{key}}</td>
                     <td>{{item.dni}}</td>
                     <td>{{item.firstname}}</td>
                     <td>{{item.lastname}}</td>
