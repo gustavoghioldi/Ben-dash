@@ -37,3 +37,4 @@ var rolsRef = firebase.database().ref('/communities/la_caja/rols');
 var usersRef = firebase.database().ref('/communities/la_caja/users');
 var membersRef = firebase.database().ref('/communities/la_caja/members');
 var suportRef = firebase.database().ref('/communities/la_caja/suport');
+var transactionsRef = firebase.database().ref('/communities/la_caja/transactions');

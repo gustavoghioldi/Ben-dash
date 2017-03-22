@@ -59,6 +59,14 @@
         $scope.edit = function(kinda) {
             console.log(kinda);
             console.log($scope);
+            if (kinda == 'form') {
+                configRef.update({
+                    "name": $scope.conf.name,
+                    "description": $scope.conf.description,
+                    "price": $scope.conf.price,
+                    "email": $scope.conf.email
+                });
+            }
             if (kinda == 'landing') {
                 configRef.child('landing').update($scope.conf.landing);
             }

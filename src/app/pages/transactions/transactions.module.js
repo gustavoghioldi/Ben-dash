@@ -6,7 +6,8 @@
     'use strict';
 
     angular.module('BlurAdmin.pages.transactions', [
-            'BlurAdmin.pages.transactions.init'
+            'BlurAdmin.pages.transactions.init',
+            'BlurAdmin.pages.transactions.edit'
         ])
         .config(routeConfig);
 

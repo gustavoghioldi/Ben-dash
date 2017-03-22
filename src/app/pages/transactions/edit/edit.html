@@ -1,0 +1,31 @@
+<div class="widgets">
+
+    <div ng-controller="TransactionsCtrl">
+        <div class="row ">
+            <div class="form-group ">
+                <ui-select ng-change="transactionSelected()" ng-model="transactions.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true" search-enabled="true">
+                    <ui-select-match placeholder="codigo de transacción">
+                        <span> {{$select.selected.key}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="t in transactionsArray | filter: $select.search">
+                        <span id="code">{{t.key}}</span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="transaction" ng-controller="TransactionsEditCtrl">
+        <div class="col-md-6">
+           
+                    <div ba-panel ba-panel-title="Info" ba-panel-class="with-scroll">
+                        <div include-with-scope="app/pages/transactions/widgets/edit.info.html"></div>
+                    
+            </div>
+         
+        </div>
+    </div>
+
+
+
+</div>

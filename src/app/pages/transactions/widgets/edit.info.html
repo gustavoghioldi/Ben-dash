@@ -1,0 +1,10 @@
+<div ng-controller="TransactionsEditCtrl">
+    <div class="form-group">
+        <h4>Id de Venta: {{saleKey}}</h4>
+        <h4>SKU: {{transaction.item.sku}}</h4>
+        <h4>Producto: {{transaction.item.name}}</h4>
+        <h4>Producto: {{transaction.item.details.price.discountPrice}}</h4>
+    </div>
+    <button ng-if="!transaction.used" type="button" class="btn btn-primary" ng-click="toUsed()">Usar</button>
+    <button ng-if="transaction.used" type="button" class="btn btn-danger" >Ya fue usado</button>
+</div>
