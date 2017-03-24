@@ -21,10 +21,20 @@
             $scope.categories = ss.val();
             console.log($scope.categories);
         });
+        productsRef.on('value', function(ss) {
+            $scope.products = ss.val();
+            console.log($scope.products);
+        });
+        partnersRef.on('value', function(ss) {
+            $scope.partners = ss.val();
+            console.log($scope.partners);
+        });
 
         $scope.changeOrderCategories = function() {
             categoriesRef.set($scope.categories);
         }
+
+        
 
 
         $scope.uploadPicture = function() {

@@ -1,7 +1,4 @@
 <uib-accordion>
-    <uib-accordion-group heading="PRINCIPALES" panel-class="bootstrap-panel accordion-panel panel-default">
-        Hello
-    </uib-accordion-group>
     <uib-accordion-group heading="CATEGORIAS" panel-class="bootstrap-panel accordion-panel panel-default">
 
         <form class="row">
@@ -16,11 +13,34 @@
         </form>
         <button class="btn btn-primary btn-sm" ng-click="changeOrderCategories()">Guardar</button>
     </uib-accordion-group>
+    
     <uib-accordion-group heading="PARTNERS" panel-class="bootstrap-panel accordion-panel panel-default">
-        <p>The body of the uib-accordion group grows to fit the contents</p>
-        <button type="button" class="btn btn-primary btn-sm">Add Item</button>
-    </uib-accordion-group>
+    
+        <form class="row">
+            <div class="form-group">
+                <div ng-repeat="c in partners">
+                    <div class="col-xs-3 col-md-2">
+                        <label for="name">{{c.name}}</label>
+                        <input type="number" class="form-control" ng-model="c.order" placeholder="orden">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <button class="btn btn-primary btn-sm" ng-click="changeOrderPartners()">Guardar</button>
+        </uib-accordion-group>
+    
     <uib-accordion-group heading="BENEFICIOS" panel-class="bootstrap-panel accordion-panel panel-default">
-        Hello
+        
+        <form class="row">
+            <div class="form-group">
+                <div ng-repeat="c in products">
+                    <div class="col-xs-3 col-md-2">
+                        <label for="name">{{c.name}}</label>
+                        <input type="number" class="form-control" ng-model="c.order" placeholder="orden">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <button class="btn btn-primary btn-sm" ng-click="changeOrderBenefits()">Guardar</button>
     </uib-accordion-group>
 </uib-accordion>
