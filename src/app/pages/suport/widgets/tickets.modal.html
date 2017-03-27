@@ -8,23 +8,34 @@
     <div class="modal-body">
         <form>
             <div class="form-group">
-                        <label for="title">Titulo</label>
-                        <input type="text" class="form-control" ng-model="title" placeholder="Nombre"> 
-                        <label for="author">Titulo</label>
-                        <input type="text" class="form-control" ng-model="author" placeholder="Autor">           
-                        <label for="description">Descripción</label>
-                        <textarea type="text" class="form-control" ng-model="description" placeholder="Descripción"></textarea>
-                        <label for="asigned_to">Asignado a:</label>
-                        <input type="text" class="form-control" ng-model="asiged_to" placeholder="asigado a ">
-                        
+                <label for="title">Titulo</label>
+                <input type="text" class="form-control" ng-model="title" placeholder="Nombre">
+                <label for="author">Titulo</label>
+                <input type="text" class="form-control" ng-model="author" placeholder="Autor">
+                <label for="description">Descripción</label>
+                <textarea type="text" class="form-control" ng-model="description" placeholder="Descripción"></textarea>
+                <label for="asigned_to">Asignado a:</label>
+                <input type="text" class="form-control" ng-model="asiged_to" placeholder="asigado a ">
+
+                <div class="row">
+                    <div class="col-md-6">
                         <label for="type">tipo:</label>
-                        <input type="text" class="form-control" ng-model="type" placeholder="tipo">
+                        <select class="form-control" ng-model="type">
+                        <option ng-repeat="(key, t) in types" value="key">{{t.name}}</option>
+                </select>
+                    </div>
+                    <div class="col-md-6">
                         <label for="priority">prioridad:</label>
-                        <input type="text" class="form-control" ng-model="priority" placeholder="prioridad">
+                        <select class="form-control" ng-model="priority">
+                        <option ng-repeat="p in priorities" ng-value="p">{{p}}</option>
+                </select>
+                    </div>
+                </div>
             </div>
 
         </form>
     </div>
+
     <div class="modal-footer">
         <button type="button" class="btn btn-primary" ng-click="save();$dismiss() ">Guardar</button>
     </div>

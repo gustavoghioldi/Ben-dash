@@ -17,6 +17,8 @@
             $scope.tickets = ss.val();
         });
 
+        
+
         $scope.open = function(page, size) {
             $uibModal.open({
                 animation: true,
