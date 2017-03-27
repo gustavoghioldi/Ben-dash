@@ -1,4 +1,4 @@
-<div>
+<div ng-controller="SuportTicketCtrl">
     <div class="add-row-editable-table">
         <button class="btn btn-primary" ng-click="open('app/pages/suport/widgets/tickets.modal.html', 'lg')">Crear Ticket</button>
     </div>
@@ -7,23 +7,26 @@
             <thead>
                 <tr class="black-muted-bg">
 
+                    <td>ID</td>
                     <th>Titulo</th>
                     <th>Autor</th>
                     <th>Asignado a</th>
                     <th>Estado</th>
                     <th>Ultima Modificación</th>
+                    <th>priority</th>
                     <th class="align-right">Actions</th>
 
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="(key, item) in ticketTypes" class="no-top-border">
-
-                    <td>{{item.code}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.color}}</td>
+                <tr ng-repeat="(key, item) in tickets" class="no-top-border">
+                    <td>{{key}}</td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.author}}</td>
+                    <td>{{item.asigned_to}}</td>
                     <td>{{item.status}}</td>
-                    <td>{{item.lastUpdate}}</td>
+                    <td>{{item.type}}</td>
+                    <td>{{item.priority}}</td>
                     <td class="align-right">
 
                         <button class="btn btn-xs btn-primary btn-raised" ng-click="view(key)">view</button>
