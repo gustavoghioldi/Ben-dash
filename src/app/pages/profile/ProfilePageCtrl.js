@@ -9,7 +9,23 @@
     .controller('ProfilePageCtrl', ProfilePageCtrl);
 
   /** @ngInject */
-  function ProfilePageCtrl($scope, fileReader, $filter, $uibModal) {
+  function ProfilePageCtrl($scope, fileReader, $filter, $uibModal, $rootScope) {
+    console.log("ProfilePageCtrl...");
+    
+    $scope.log = function() {
+          console.log("comenzando");
+        firebase.auth().signInWithEmailAndPassword('gustavo.ghioldi@benefit.com.ar', '1270pesecin')
+        .then(function(result){
+            $rootScope.userAuth = result;
+        })
+        .catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+        });
+    }
+    
     $scope.picture = $filter('profilePicture')('Nasta');
 
     $scope.removePicture = function () {
