@@ -11,21 +11,21 @@
   /** @ngInject */
   function ProfilePageCtrl($scope, fileReader, $filter, $uibModal, $rootScope) {
     console.log("ProfilePageCtrl...");
-    
-    $scope.log = function() {
-          console.log("comenzando");
-        firebase.auth().signInWithEmailAndPassword('gustavo.ghioldi@benefit.com.ar', '1270pesecin')
-        .then(function(result){
-            $rootScope.userAuth = result;
+
+    $scope.log = function () {
+      console.log("comenzando login");
+      firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password)
+        .then(function (result) {
+          $rootScope.userAuth = result;
         })
         .catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // ...
         });
     }
-    
+
     $scope.picture = $filter('profilePicture')('Nasta');
 
     $scope.removePicture = function () {
@@ -88,15 +88,15 @@
         controller: 'ProfileModalCtrl',
         templateUrl: 'app/pages/profile/profileModal.html'
       }).result.then(function (link) {
-          item.href = link;
-        });
+        item.href = link;
+      });
     };
 
     $scope.getFile = function () {
       fileReader.readAsDataUrl($scope.file, $scope)
-          .then(function (result) {
-            $scope.picture = result;
-          });
+        .then(function (result) {
+          $scope.picture = result;
+        });
     };
 
     $scope.switches = [true, true, false, true, true, false];
