@@ -22,7 +22,7 @@ var usersRef = firebase.database().ref('/communities/la_caja/users');
 var membersRef = firebase.database().ref('/communities/la_caja/members');
 var suportRef = firebase.database().ref('/communities/la_caja/suport');
 var transactionsRef = firebase.database().ref('/communities/la_caja/transactions');
-
+var authRef = firebase.auth();
 angular.module('BlurAdmin', [
     'ja.qr',
     'ngAnimate',
@@ -38,10 +38,11 @@ angular.module('BlurAdmin', [
     'angular-progress-button-styles',
     'BlurAdmin.theme',
     'BlurAdmin.pages',
-]).run(function($rootScope, $location){
-   
-$rootScope.$on('$locationChangeStart', function(event, next, current){
-    console.log(firebase.auth().currentUser);
+]).run(function ($rootScope, $location) {
+
+    $rootScope.$on('$locationChangeStart', function (event, next, current) {
+        
         $rootScope.userAuth = firebase.auth().currentUser;
+        
     });
 });
