@@ -1,7 +1,3 @@
-/**
- * @author a.demeshko
- * created on 18.01.2016
- */
 (function() {
     'use strict';
 
@@ -11,7 +7,6 @@
     /** @ngInject */
     function AdminRolsCtrl($scope, $state, $uibModal) {
         console.log('AdminRolsCtrl');
-
         rolsRef.on('value', function(ss) {
             $scope.rols = ss.val();
             console.log($scope.rols);

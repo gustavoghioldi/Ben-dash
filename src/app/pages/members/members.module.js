@@ -6,7 +6,8 @@
     'use strict';
 
     angular.module('BlurAdmin.pages.members', [
-            'BlurAdmin.pages.members.init'
+            'BlurAdmin.pages.members.init',
+            'BlurAdmin.pages.members.profilemember'
         ])
         .config(routeConfig);
 

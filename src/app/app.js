@@ -12,7 +12,7 @@ firebase.initializeApp(config);
 
 
 //json: https://benefit-cb2e2.firebaseio.com/communities.json
-
+var baseRef = firebase.database().ref('/communities/la_caja');
 var categoriesRef = firebase.database().ref('/communities/la_caja/categories');
 var configRef = firebase.database().ref('/communities/la_caja/config');
 var partnersRef = firebase.database().ref('/communities/la_caja/partners');
@@ -23,6 +23,7 @@ var membersRef = firebase.database().ref('/communities/la_caja/members');
 var suportRef = firebase.database().ref('/communities/la_caja/suport');
 var transactionsRef = firebase.database().ref('/communities/la_caja/transactions');
 var authRef = firebase.auth();
+
 angular.module('BlurAdmin', [
     'ja.qr',
     'ngAnimate',
