@@ -2,7 +2,7 @@
  * @author a.demeshko
  * created on 21.01.2016
  */
-(function() {
+(function () {
     'use strict';
 
     angular.module('BlurAdmin.pages.members')
@@ -14,7 +14,7 @@
 
 
 
-        $scope.addMember = function(modal) {
+        $scope.addMember = function (modal) {
             console.log($scope);
             modal.$dismiss();
             var newKey = membersRef.push({
@@ -25,9 +25,12 @@
                 state: $scope.state,
                 city: $scope.city
             }).key;
-            
-            $http.get("http://api.benefit.com.ar")
-            .then(function(res){console.log(res)}, function(err){console.log(err)});
+            //esto pasarlo a funcion firebase(beta)
+            membersRef.child(newKey).on('value', function (ss) {
+                var newMember = ss.val();
+                $http.post('/api.benefit.com.ar?cardID=' + ss.key, data)
+                    .then(function (res) { console.log(res) }, function (err) { console.log(err) });
+            });
         }
 
     }

@@ -1,10 +1,18 @@
-<form ng-controller="CategoriesCtrl">
+<form>
     <div class="form-group">
-        <label for="code">Código</label>
-        <input type="text" class="form-control" id="code" ng-model="code" placeholder="Código">
-        <label for="name">Nombre de la categoría</label>
-        <input type="text" class="form-control" id="name" ng-model="name" placeholder="name">
-
+        <label for="campaign_name">Nombre de la Campaña</label>
+        <input type="text" class="form-control" ng-model="campaing_name" placeholder="Nombre de la Campaña">
+        <label for="state">Provincia</label>
+        <input type="text" class="form-control" ng-model="State" placeholder="Provincia">
+        <label for="state">Provincia</label>
+        <input type="text" class="form-control" ng-model="State" placeholder="Provincia">
+        <label for="state">Ciudad</label>
+        <input type="text" class="form-control" ng-model="city" placeholder="Ciudad">
+        <label for="state">Genero</label>
+        <input type="text" class="form-control" ng-model="sex" placeholder="Genero">
+        <label for="state">Base de Datos</label>
+        <input type="text" class="form-control" ng-model="State" placeholder="Provincia">
+        
     </div>
-    <button type="button" class="btn btn-primary" ng-click="onClickAdd()">Guardar</button>
+    <button type="button" class="btn btn-primary" ng-click="onClickAdd()">Crear Nueva Campaña</button>
 </form>
