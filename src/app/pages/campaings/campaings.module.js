@@ -6,7 +6,9 @@
     'use strict';
 
     angular.module('BlurAdmin.pages.campaings', [
-
+        'BlurAdmin.pages.campaings.push',
+        'BlurAdmin.pages.campaings.email',
+        'BlurAdmin.pages.campaings.history'
         ])
         .config(routeConfig);
 
