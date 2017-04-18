@@ -28,8 +28,7 @@
                 "table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"],
             toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code',
             templates: [
-                { title: 'Some title 1', description: 'Some desc 1', content: '<h1>sdasdasd</h1>' },
-                { title: 'Some title 2', description: 'Some desc 2', url: 'development.html' }
+                { title: 'Some title 1', description: 'Some desc 1', content: '<h1>sdasdasd</h1>' }
             ]
         };
 
