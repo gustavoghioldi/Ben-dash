@@ -19,7 +19,7 @@
                 <tr ng-repeat="(key, item) in transactions" class="no-top-border" ng-if="item.item.type != 'discount'">
                     <div ng-if="!item.type.discount">
                         <td>{{key}}</td>
-                        <td>{{item.member}}</td>
+                        <td><a ng-click="getMemeber(item.member)">{{item.member}}</a></td>
                         <td>{{item.item.partner.code}}</td>
                         <td>${{item.item.details.price.discountPrice}}</td>
                         <td>{{item.used}}</td>
