@@ -25,8 +25,6 @@
             'BlurAdmin.pages.transactions',
             'BlurAdmin.pages.campaings',
          
-
-
         ])
        
         .config(routeConfig);

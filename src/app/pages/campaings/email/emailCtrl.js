@@ -6,7 +6,9 @@
 
     /** @ngInject */
     function EmailCtrl($scope, $state, $uibModal) {
+        
         var template = '<p style="text-align: center;">TUMB</p>';
+        
         template += '<table style="margin-left: auto; margin-right: auto;">';
         template += '<tbody>';
         template += '<tr>';
@@ -21,6 +23,7 @@
         template += '</tr>';
         template += '</tbody>';
         template += '</table>';
+        
         tinymce.init({
             selector: 'textarea',
             plugins: ["advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
@@ -32,23 +35,6 @@
                 { title: 'Tabla de imagenes', description: 'tabla de imagenes', content: template }
             ]
         });
-        $scope.tinymceModel = '';
-
-        $scope.getContent = function () {
-            console.log('Editor content:', $scope.tinymceModel);
-        };
-
-        
-        $scope.tinymceOptions = {
-            plugins: ["advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
-                "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                "table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"],
-
-            toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code',
-            templates: [
-                { title: 'Tabla de imagenes', description: 'tabla de imagenes', content: template }
-            ]
-        };
 
     }
 

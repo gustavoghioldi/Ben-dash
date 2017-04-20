@@ -1,4 +1,4 @@
-<form>
+<form ng-controller="CampaingCtrl">
     <div class="row">
         <div class="col-md-12">
             <label for="campaignName">Nombre de la Campaña</label>
@@ -17,15 +17,24 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
-            <label for="sex">Provincia</label>
-            <input type="text" ng-model="campaignName" class="form-control" placeholder="Nombre de la campaña">
+        <div class="col-md-12">
+            <label for="sex">Dirección</label>
+            <input type="text" ng-model="campaignName" class="form-control" placeholder="Centro de la campaña ej(ej: salta 153, Rosario, Santa Fe, Argentina)">
+
         </div>
-        <div class="col-md-6">
-            <label for="sex">Ciudad</label>
-
-            <input type="text" ng-model="campaignName" class="form-control" placeholder="Nombre de la campaña">
-
+        <div class="row">
+            <div class="col-md-12">
+                <label for="sex">Distancia en Mtrs a la redonda</label>
+                <input type="number" ng-model="campaignName" class="form-control" placeholder="ej: 2150">
+            </div>
+            <div>
+                <div class="col-md-12">
+                    <br><br>
+                    <div>
+                        <button class="btn btn-info" ng-click="geolocalizar()">Geolocalizar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -37,7 +46,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <button  class="btn btn-primary" ng-click="saveCampain()">Guardar Campaña</button>
+            <button class="btn btn-primary" ng-click="saveCampain()">Guardar Campaña</button>
         </div>
     </div>
 </form>

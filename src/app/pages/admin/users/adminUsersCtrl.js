@@ -1,7 +1,4 @@
-/**
- * @author a.demeshko
- * created on 18.01.2016
- */
+
 (function () {
     'use strict';
 
@@ -14,7 +11,7 @@
         usersRef.on('value', function (ss) {
             $scope.users = ss.val();
             console.log($scope.users);
-            
+
         });
 
         rolsRef.on('value', function (ss) {
@@ -45,6 +42,26 @@
             }
         }
 
+        $scope.edit = function(key, item){
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'app/pages/admin/widgets/users.edit.modal.html',
+                size: 'lg',
+                controller: function($scope) {
+                    $scope.rol = item;
+                    $scope.key = key;
+                    $scope.edit = function(modal) {
+                        modal.$dismiss;
+                        rolsRef.child($scope.key).set({
+                            name: $scope.rol.name,
+                            read: $scope.rol.read || null,
+                            write: $scope.rol.write || null
+                        });
+                    }
+                }
+            });
+        }
+
 
         $scope.addUser = function (modal) {
             modal.$dismiss();
@@ -58,21 +75,17 @@
                     });
 
                     authRef.sendPasswordResetEmail($scope.user.email).then(function () {
-                        console.log("mandando email a:"+$scope.user.email);
+                        console.log("mandando email a:" + $scope.user.email);
                     }, function (error) {
-                        // An error happened.
+                        console.log(error);
                     });
                 })
                 .catch(function (error) {
-                    // Handle Errors here.
                     var errorCode = error.code;
                     var errorMessage = error.message;
-                    // ...
                 });
-            /**/
+
         }
-
-
 
 
     }
