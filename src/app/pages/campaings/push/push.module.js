@@ -5,7 +5,9 @@
 (function() {
     'use strict';
 
-    angular.module('BlurAdmin.pages.campaings.push', [])
+    angular.module('BlurAdmin.pages.campaings.push', [
+         'ui.tinymce'
+    ])
         .config(routeConfig);
 
     /** @ngInject */

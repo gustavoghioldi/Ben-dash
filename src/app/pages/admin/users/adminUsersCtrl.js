@@ -55,9 +55,6 @@
                         name: $scope.user.name,
                         email: $scope.user.email,
                         rol: $scope.user.rol.rol
-                    })
-                    .then(function(key){
-                        console.log(key);
                     });
 
                     authRef.sendPasswordResetEmail($scope.user.email).then(function () {

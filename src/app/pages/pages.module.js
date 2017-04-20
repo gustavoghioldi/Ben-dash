@@ -7,7 +7,7 @@
     
     angular.module('BlurAdmin.pages', [
             'ui.router',
-            'ui.tinymce',
+           
             'BlurAdmin.pages.categories',
             'BlurAdmin.pages.dashboard',
             //'BlurAdmin.pages.components',

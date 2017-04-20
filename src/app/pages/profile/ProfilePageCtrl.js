@@ -12,6 +12,7 @@
   function ProfilePageCtrl($scope, fileReader, $filter, $uibModal, $rootScope) {
     console.log("ProfilePageCtrl...");
 
+
     $scope.log = function () {
       console.log("comenzando login");
       firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password)
