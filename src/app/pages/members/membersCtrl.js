@@ -9,7 +9,7 @@
         .controller('MembersCtrl', MembersCtrl);
 
     /** @ngInject */
-    function MembersCtrl($scope, $state, toastr, $stateParams, $uibModal) {
+    function MembersCtrl($scope, $state, toastr, $stateParams, $uibModal, $http) {
         console.log('MembersCtrl...');
 
         membersRef.on('value', function(ss) {
@@ -22,6 +22,20 @@
                 animation: true,
                 templateUrl: page,
                 size: size,
+            });
+        }
+
+        $scope.facebook = function (key){
+            $http.get("https://graph.facebook.com/v2.8/me?fields=id,name,picture,cover,age_range,timezone,updated_time,verified,gender,locale&access_token="+key+"&debug=all")
+            .then(function(data){
+                $scope.facebookData = data.data;
+                
+                $uibModal.open({
+                    animation:true,
+                    templateUrl: 'app/pages/members/widgets/member.facebook.modal.html',
+                    size: 'lg',
+                    scope: $scope
+                });
             });
         }
 

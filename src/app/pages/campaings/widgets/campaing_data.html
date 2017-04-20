@@ -1,10 +1,43 @@
-<form ng-controller="CategoriesCtrl">
-    <div class="form-group">
-        <label for="code">Código</label>
-        <input type="text" class="form-control" id="code" ng-model="code" placeholder="Código">
-        <label for="name">Nombre de la categoría</label>
-        <input type="text" class="form-control" id="name" ng-model="name" placeholder="name">
-
+<form>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="campaignName">Nombre de la Campaña</label>
+            <input type="text" ng-model="campaignName" class="form-control" placeholder="Nombre de la campaña">
+        </div>
     </div>
-    <button type="button" class="btn btn-primary" ng-click="onClickAdd()">Guardar</button>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="sex">Sexo</label>
+            <input type="text" ng-model="campaignName" class="form-control" placeholder="Nombre de la campaña">
+        </div>
+        <div class="col-md-6">
+            <label for="sex">Interes Principal</label>
+            <input type="text" ng-model="campaignName" class="form-control" placeholder="Nombre de la campaña">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="sex">Provincia</label>
+            <input type="text" ng-model="campaignName" class="form-control" placeholder="Nombre de la campaña">
+        </div>
+        <div class="col-md-6">
+            <label for="sex">Ciudad</label>
+
+            <input type="text" ng-model="campaignName" class="form-control" placeholder="Nombre de la campaña">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="date">Fecha de la Campaña</label>
+            <input type="date" class="form-control" ng-model="date">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button  class="btn btn-primary" ng-click="saveCampain()">Guardar Campaña</button>
+        </div>
+    </div>
 </form>

@@ -22,6 +22,7 @@ var usersRef = firebase.database().ref('/communities/la_caja/users');
 var membersRef = firebase.database().ref('/communities/la_caja/members');
 var suportRef = firebase.database().ref('/communities/la_caja/suport');
 var transactionsRef = firebase.database().ref('/communities/la_caja/transactions');
+var rootRef = firebase.database().ref('/communities/la_caja');
 var authRef = firebase.auth();
 
 angular.module('BlurAdmin', [

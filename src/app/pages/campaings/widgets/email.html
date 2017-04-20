@@ -1,6 +1,9 @@
-  <form method="post" ng-controller="EmailCtrl">
+<div class="row">
+  <form>
     <textarea ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
-    <button ng-click="getContent()">Get content</button>
-    <button ng-click="setContent()">Set content</button>
   </form>
-  {{tinymceModel}}
+</div>
+<div class="row">
+  <button class="btn btn-primary" ng-click="preview()">Previsualizar</button>
+  <button class="btn btn-primary" ng-click="saveTemplate()">Grabar Template</button>
+</div>
