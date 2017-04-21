@@ -1,39 +1,38 @@
 <form ng-controller="CampaingCtrl">
     <div class="row">
         <div class="col-md-12">
-            <label for="campaignName">Nombre de la Campaña</label>
-            <input type="text" ng-model="campaignName" class="form-control" placeholder="Nombre de la campaña">
+            <label for="name">Nombre de la Campaña</label>
+            <input type="text" ng-model="name" class="form-control" placeholder="Nombre de la campaña">
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
             <label for="sex">Sexo</label>
-            <input type="text" ng-model="campaignName" class="form-control" placeholder="Nombre de la campaña">
+            <select ng-value="sex" class="form-control">
+                <option value="all">Todos</option>
+                <option value="male">Masculino</option>
+                <option value="feme">femenino</option>
+            </select>
         </div>
-        <div class="col-md-6">
-            <label for="sex">Interes Principal</label>
-            <input type="text" ng-model="campaignName" class="form-control" placeholder="Nombre de la campaña">
+    
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="address">Dirección</label>
+            <input type="text" ng-model="address" class="form-control" placeholder="Centro de la campaña ej(ej: salta 153, Rosario, Santa Fe, Argentina)">
 
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <label for="sex">Dirección</label>
-            <input type="text" ng-model="campaignName" class="form-control" placeholder="Centro de la campaña ej(ej: salta 153, Rosario, Santa Fe, Argentina)">
-
+            <label for="kmtrs">Distancia en Mtrs a la redonda</label>
+            <input type="number" ng-model="mtrs" class="form-control" placeholder="ej: 2150 = 2 ktrs y 150 mtrs">
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <label for="sex">Distancia en Mtrs a la redonda</label>
-                <input type="number" ng-model="campaignName" class="form-control" placeholder="ej: 2150">
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <div>
-                <div class="col-md-12">
-                    <br><br>
-                    <div>
-                        <button class="btn btn-info" ng-click="geolocalizar()">Geolocalizar</button>
-                    </div>
-                </div>
+                <button class="btn btn-info" ng-click="geolocalizar()">Ver Geolocalizacion</button>
             </div>
         </div>
     </div>
@@ -41,6 +40,13 @@
         <div class="col-md-12">
             <label for="date">Fecha de la Campaña</label>
             <input type="date" class="form-control" ng-model="date">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label for="time">Hora</label>
+            <input type="number" class="form-control" ng-model="time" placeholder="4 digitos (ej: 1635 para las 16:35)">
         </div>
     </div>
 

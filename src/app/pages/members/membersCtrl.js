@@ -2,7 +2,7 @@
  * @author a.demeshko
  * created on 21.01.2016
  */
-(function() {
+(function () {
     'use strict';
 
     angular.module('BlurAdmin.pages.members')
@@ -12,12 +12,12 @@
     function MembersCtrl($scope, $state, toastr, $stateParams, $uibModal, $http) {
         console.log('MembersCtrl...');
 
-        membersRef.on('value', function(ss) {
+        membersRef.on('value', function (ss) {
             $scope.members = ss.val();
             console.log($scope.members);
         });
 
-        $scope.open = function(page, size) {
+        $scope.open = function (page, size) {
             $uibModal.open({
                 animation: true,
                 templateUrl: page,
@@ -25,18 +25,29 @@
             });
         }
 
-        $scope.facebook = function (key){
-            $http.get("https://graph.facebook.com/v2.8/me?fields=id,name,picture,cover,age_range,timezone,updated_time,verified,gender,locale&access_token="+key+"&debug=all")
-            .then(function(data){
-                $scope.facebookData = data.data;
-                
-                $uibModal.open({
-                    animation:true,
-                    templateUrl: 'app/pages/members/widgets/member.facebook.modal.html',
-                    size: 'lg',
-                    scope: $scope
-                });
+        $scope.view = function (key) {
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'app/pages/members/widgets/member.data.modal.html',
+                size: 'lg',
+                scope: $scope,
+                controller: function () {
+                    membersRef.child(key).on('value', function (ss) {
+                        $scope.member = ss.val();
+                        console.log($scope.member);
+                        $http.get("https://graph.facebook.com/v2.8/me?fields=id,name,picture,cover,age_range,timezone,updated_time,verified,gender,locale&access_token=" + $scope.member.credential.accessToken + "&debug=all")
+                            .then(function (data) {
+                                $scope.facebookData = data.data;
+                                console.log(data.data);
+                            });
+                    });
+                }
+
             });
+        }
+
+        $scope.facebook = function (key) {
+
         }
 
 
