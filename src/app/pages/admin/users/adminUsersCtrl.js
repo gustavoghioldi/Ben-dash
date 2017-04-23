@@ -42,15 +42,15 @@
             }
         }
 
-        $scope.edit = function(key, item){
+        $scope.edit = function (key, item) {
             $uibModal.open({
                 animation: true,
                 templateUrl: 'app/pages/admin/widgets/users.edit.modal.html',
                 size: 'lg',
-                controller: function($scope) {
+                controller: function ($scope) {
                     $scope.rol = item;
                     $scope.key = key;
-                    $scope.edit = function(modal) {
+                    $scope.edit = function (modal) {
                         modal.$dismiss;
                         rolsRef.child($scope.key).set({
                             name: $scope.rol.name,
@@ -65,26 +65,12 @@
 
         $scope.addUser = function (modal) {
             modal.$dismiss();
-            authRef.createUserWithEmailAndPassword($scope.user.email, "password")
-                .then(function (userRecord) {
-                    console.log(userRecord);
-                    usersRef.child(userRecord.uid).set({
-                        name: $scope.user.name,
-                        email: $scope.user.email,
-                        rol: $scope.user.rol.rol
-                    });
-
-                    authRef.sendPasswordResetEmail($scope.user.email).then(function () {
-                        console.log("mandando email a:" + $scope.user.email);
-                    }, function (error) {
-                        console.log(error);
-                    });
-                })
-                .catch(function (error) {
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                });
-
+            usersRef.push({
+                name: $scope.user.name,
+                email: $scope.user.email,
+                rol: $scope.user.rol.rol
+            });
+            
         }
 
 

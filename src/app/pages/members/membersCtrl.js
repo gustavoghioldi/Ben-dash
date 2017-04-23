@@ -46,12 +46,6 @@
             });
         }
 
-        $scope.facebook = function (key) {
-
-        }
-
-
-
     }
 
 })();

@@ -26,8 +26,6 @@
                 city: $scope.city
             }).key;
             
-            $http.get("http://api.benefit.com.ar")
-            .then(function(res){console.log(res)}, function(err){console.log(err)});
         }
 
     }
